@@ -430,6 +430,16 @@
     const PLACES=["crianca","fuga","pai_mae","desequilibrio","defesa","salvador","distancia"];
 
 
+
+    const visualOrders={
+      1:["C","A","D","B"],2:["B","D","A","C"],3:["D","A","C","B"],4:["B","C","D","A"],
+      5:["C","D","A","B"],6:["A","C","B","D"],7:["B","D","C","A"],8:["D","B","A","C"],
+      9:["C","A","D","B"],10:["B","C","D","A"],11:["D","A","B","C"],12:["C","D","B","A"],
+      13:["B","A","D","C"],14:["D","C","A","B"],15:["A","D","C","B"],16:["C","B","D","A"],
+      17:["B","D","A","C"],18:["D","A","C","B"],19:["C","A","B","D"],20:["B","C","A","D"],
+      21:["D","B","C","A"],22:["C","A","D","B"],23:["B","D","A","C"],24:["D","C","B","A"]
+    };
+
     function renderQuestions(){
       form.innerHTML="";
       QUESTIONS.forEach((item,idx)=>{
