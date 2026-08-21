@@ -430,6 +430,83 @@
     const PLACES=["crianca","fuga","pai_mae","desequilibrio","defesa","salvador","distancia"];
 
 
+    function renderQuestions(){
+      form.innerHTML="";
+      QUESTIONS.forEach((item,idx)=>{
+        const q=idx+1;
+        const section=document.createElement("section");
+        section.className="section";
+        const order=visualOrders[q]||["A","B","C","D"];
+        section.innerHTML=`
+          <div class="question">
+            <div class="qtext"><span class="qnum">${q}.</span>${item.q}</div>
+            <div class="options choiceGrid">
+              ${order.map((internal,i)=>{
+                const visual=["A","B","C","D"][i];
+                return `<span class="choiceOption">
+                  <input type="radio" name="q${q}" id="q${q}_${internal}" value="${internal}" required>
+                  <label for="q${q}_${internal}"><span class="choiceLetter">${visual}</span><span>${item.opts[internal]}</span></label>
+                </span>`;
+              }).join("")}
+            </div>
+          </div>`;
+        form.appendChild(section);
+      });
+    }
+
+    function code(q,a){return `P${String(q).padStart(2,"0")}-${a}`;}
+    function intensity(p){if(p<20)return"Residual";if(p<35)return"Leve";if(p<60)return"Moderada";return"Forte";}
+    function confidence(n){return n>=3?"Alta":n===2?"Média":"Baixa";}
+
+    function getSelections(){
+      const arr=[]; let miss=0;
+      for(let q=1;q<=24;q++){
+        const chosen=form.querySelector(`input[name="q${q}"]:checked`);
+        if(!chosen){miss++;continue;}
+        arr.push({q,answer:chosen.value,code:code(q,chosen.value),text:QUESTIONS[q-1].opts[chosen.value]});
+      }
+      return {arr,miss};
+    }
+
+    function calculate(){
+      const scores={};
+      PLACES.forEach(p=>scores[p]={weighted:0,count:0,strengths:{MF:0,F:0,M:0},families:new Set(),evidence:[]});
+      const adult=[];
+      for(const s of getSelections().arr){
+        const m=MATRIX[s.code];
+        const ev={...s,...m};
+        if(m.place==="adulto"){adult.push(ev);continue;}
+        const slot=scores[m.place];
+        slot.weighted+=WEIGHTS[m.strength];
+        slot.count++; slot.strengths[m.strength]++; slot.families.add(m.family); slot.evidence.push(ev);
+      }
+      const ranking=PLACES.map(p=>{
+        const s=scores[p],pct=+(100*s.weighted/MAX[p]).toFixed(1),fam=s.families.size;
+        return {place:p,label:LABELS[p],pct,intensity:intensity(pct),eligible:s.count>=2&&pct>=20,
+          weighted:+s.weighted.toFixed(2),max:MAX[p],evidenceCount:s.count,
+          strengths:s.strengths,familyCount:fam,confidence:confidence(fam),families:[...s.families],evidence:s.evidence};
+      }).sort((a,b)=>(b.eligible-a.eligible)||(b.pct-a.pct)||(b.strengths.MF-a.strengths.MF)||(b.familyCount-a.familyCount)||(b.evidenceCount-a.evidenceCount));
+      const eligible=ranking.filter(x=>x.eligible);
+      const primary=eligible[0]||null,associated=eligible[1]||null,complementary=eligible[2]||null;
+      return {primary,associated,complementary,technicalTie:!!(primary&&associated&&Math.abs(primary.pct-associated.pct)<=5),
+        adult:{count:adult.length,pct:+(adult.length/24*100).toFixed(1),evidence:adult},ranking};
+    }
+
+    function pickEvidence(group,n){
+      if(!group)return[];
+      const rank={MF:3,F:2,M:1},src=[...group.evidence].sort((a,b)=>rank[b.strength]-rank[a.strength]),out=[],fam=new Set();
+      for(const e of src)if(!fam.has(e.family)){out.push(e);fam.add(e.family);if(out.length>=n)return out;}
+      for(const e of src)if(!out.includes(e)){out.push(e);if(out.length>=n)break;}
+      return out;
+    }
+
+    function getResultCode(){
+      const raw=getSelections().arr.map(x=>x.code).join("|"); let hash=2166136261;
+      for(let i=0;i<raw.length;i++){hash^=raw.charCodeAt(i);hash=Math.imul(hash,16777619);}
+      return "OSL-"+(hash>>>0).toString(36).toUpperCase().padStart(7,"0").slice(0,7);
+    }
+
+
     const PLACE_LIBRARY={
       distancia:{
         name:"Lugar da Distância Silenciosa",
