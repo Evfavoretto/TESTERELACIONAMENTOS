@@ -327,6 +327,12 @@
     @media(max-width:820px){.resultPlaces.three{grid-template-columns:1fr}}
     @media(max-width:720px){.question .options.choiceGrid{grid-template-columns:1fr}}
 
+  
+    /* Correção de interação das alternativas */
+    .choiceOption{position:relative;z-index:1}
+    .choiceOption label{position:relative;z-index:2;pointer-events:auto!important;cursor:pointer!important}
+    .choiceOption input{pointer-events:none}
+
   </style>
 </head>
 
@@ -1024,7 +1030,7 @@ Existe diferença entre escolher não conversar agora e sentir que é melhor nun
 
       resultCard.classList.add("visible");
       btnWhats.href="https://wa.me/?text="+encodeURIComponent(buildPlainResult(r));
-      localStorage.setItem("oslDiagnostico24",JSON.stringify(getSelections().arr.map(x=>x.code)));
+
     }
 
     function updateUI(){
@@ -1043,7 +1049,12 @@ Existe diferença entre escolher não conversar agora e sentir que é melhor nun
       }
     }
 
+    // Cada acesso começa como um diagnóstico novo.
+    localStorage.removeItem("oslDiagnostico24");
     renderQuestions();
+    resultCard.classList.remove("visible");
+    statusText.textContent="Para liberar o resultado, responda todas as 24 perguntas.";
+
     form.addEventListener("change",()=>{
       if(!primeiraRespostaRegistrada){
         primeiraRespostaRegistrada=true;
@@ -1067,17 +1078,7 @@ Existe diferença entre escolher não conversar agora e sentir que é melhor nun
       if(!whatsappRegistrado&&typeof trackEvent==="function"){whatsappRegistrado=true;trackEvent("resultado_whatsapp",{});}
     });
 
-    try{
-      const saved=JSON.parse(localStorage.getItem("oslDiagnostico24")||"[]");
-      saved.forEach(c=>{
-        const m=c.match(/^P(\d{2})-([A-D])$/);
-        if(m){
-          const q=Number(m[1]),a=m[2],el=document.getElementById(`q${q}_${a}`);
-          if(el)el.checked=true;
-        }
-      });
-      updateUI();
-    }catch(e){}
+    
   </script>
 </body>
 </html>
