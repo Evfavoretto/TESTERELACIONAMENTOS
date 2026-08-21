@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Diagnóstico O Seu Lugar® — Acesso Completo</title>
+<title>Diagnóstico O Seu Lugar® — Completo</title>
 <style>
 :root{--bg:#f4efe8;--paper:#fffdf9;--ink:#26211e;--muted:#746a63;--line:#dfd5cb;--accent:#4b3c33;--soft:#eee4da;}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--ink)}
@@ -34,17 +34,27 @@ h1{font-size:clamp(31px,6vw,52px);line-height:1.02;margin:8px 0 12px}.lead{color
 .brand-mark{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:8px}
 .sublead{color:var(--muted);font-size:15px;line-height:1.65;max-width:720px;margin:0 auto 16px}
 .purchase-badge{display:inline-block;margin-top:8px;padding:8px 13px;border-radius:999px;background:#efe6dd;border:1px solid var(--line);font-size:13px;font-weight:700}
-.upgrade-block{margin-top:28px;padding-top:28px;border-top:1px solid var(--line)}
-.upgrade-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:800;margin-bottom:8px}
-.upgrade-block h3{font-size:24px;line-height:1.25;margin:0 0 12px}
-.upgrade-block p{line-height:1.65;color:var(--muted)}
-.video-shell{margin:20px 0;border-radius:18px;overflow:hidden;background:#181411;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
-.video-placeholder{color:#f7efe9;text-align:center;padding:24px}
-.play{font-size:46px;margin-bottom:14px}
-.cta-upgrade{display:block;text-decoration:none;text-align:center;background:var(--accent);color:white;padding:15px 18px;border-radius:14px;font-weight:800;margin-top:16px}
-.cta-upgrade:hover{filter:brightness(.95)}
-.upgrade-note{font-size:12px;text-align:center;margin-top:10px}
-.result-box{background:#fff}
+.devolutiva{margin-top:26px}
+.dv-block{padding:22px 0;border-bottom:1px solid var(--line)}
+.dv-block:last-child{border-bottom:0}
+.dv-label{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:7px}
+.dv-block h3{font-size:24px;line-height:1.25;margin:0 0 12px}
+.dv-block p{font-size:16px;line-height:1.75;margin:0 0 12px;color:var(--ink)}
+.dv-block p:last-child{margin-bottom:0}
+.dv-quote{margin:16px 0;padding:15px 18px;border-left:4px solid var(--accent);background:#f8f2ec;border-radius:10px;font-weight:700;line-height:1.55}
+.evidence-list{display:grid;gap:10px;margin-top:14px}
+.evidence-item{padding:14px 15px;background:#faf7f3;border:1px solid var(--line);border-radius:14px;line-height:1.55}
+.resource-list{display:grid;gap:8px;margin-top:12px}
+.resource-item{padding:12px 14px;border-radius:12px;background:#f7f3ee;line-height:1.5}
+.share-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.whatsapp{background:#244d39;color:white}
+.lesson-block{margin-top:34px;padding:28px;border-radius:20px;background:#211b17;color:#f8f2ec}
+.lesson-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;opacity:.7;font-weight:800;margin-bottom:8px}
+.lesson-block h3{font-size:27px;line-height:1.2;margin:0 0 12px}
+.lesson-block p{line-height:1.7;opacity:.9}
+.lesson-btn{display:block;text-align:center;text-decoration:none;background:#f6efe8;color:#241e1a;padding:15px 18px;border-radius:14px;font-weight:900;margin-top:18px}
+.lesson-btn:hover{filter:brightness(.96)}
+@media(max-width:620px){.share-actions{grid-template-columns:1fr}.lesson-block{padding:22px}}
 
 </style>
 </head>
@@ -53,8 +63,8 @@ h1{font-size:clamp(31px,6vw,52px);line-height:1.02;margin:8px 0 12px}.lead{color
   <div class="brand">
       <div class="brand-mark">Método O Seu Lugar®</div>
       <h1>Seu Diagnóstico O Seu Lugar®</h1>
-      <p class="lead">Você chegou até aqui para entender, com mais clareza, <strong>de onde está se relacionando hoje</strong>.</p>
-      <p class="sublead">Responda pensando em como você realmente tem vivido o teu relacionamento nos últimos meses. Não existe resposta certa ou errada. O que importa é escolher aquilo que mais se aproxima da tua realidade.</p>
+      <p class="lead">Responda às 24 situações pensando em como você realmente tem vivido o teu relacionamento nos últimos meses.</p>
+      <p class="sublead">Não existe resposta certa ou errada. Escolha aquilo que mais se aproxima da tua realidade hoje.</p>
       <div class="purchase-badge">Acesso liberado • Diagnóstico completo</div>
     </div>
 
@@ -68,31 +78,26 @@ h1{font-size:clamp(31px,6vw,52px);line-height:1.02;margin:8px 0 12px}.lead{color
       <button class="primary" id="next" onclick="nextQ()" disabled>Próxima</button>
     </div>
     
+    
   </section>
 
   <section id="result" class="card result hidden">
     <div class="kicker">Seu diagnóstico foi concluído</div>
-    <h2 id="resultTitle"></h2>
-    <p class="lead" id="resultLead"></p>
-    <div id="resultCards"></div>
-    <button class="secondary" onclick="restart()">Refazer teste</button>
-    <div class="upgrade-block">
-      <div class="upgrade-kicker">Seu próximo passo</div>
-      <h3>Agora que você já entendeu de onde está se relacionando, existe uma segunda parte dessa jornada.</h3>
-      <p>Assista ao vídeo abaixo para entender como os <strong>7 Lugares Emocionais</strong> aparecem dentro do relacionamento e o que precisa ser reorganizado para você voltar ao seu Lugar.</p>
+    <h2>Esta é a tua devolutiva</h2>
+    <p class="lead">Leia com calma. O objetivo aqui não é colocar um rótulo em você, mas mostrar de onde você está se relacionando hoje e o que as tuas próprias respostas revelaram.</p>
 
-      <div class="video-shell">
-        <div class="video-placeholder">
-          <div class="play">▶</div>
-          <div>
-            <strong>Vídeo de Upgrade — Os 7 Lugares Emocionais</strong><br>
-            <span>Substitua este bloco pelo embed do seu vídeo.</span>
-          </div>
-        </div>
-      </div>
+    <article id="fullDevolutiva" class="devolutiva"></article>
 
-      <a class="cta-upgrade" href="#" id="upgradeCta">QUERO CONHECER OS 7 LUGARES</a>
-      <p class="upgrade-note">Você pode substituir o link acima pela página de checkout, produto ou próxima etapa do seu funil.</p>
+    <div class="share-actions">
+      <button class="primary" onclick="copyDevolutiva()">Copiar minha devolutiva</button>
+      <button class="whatsapp" onclick="shareWhatsApp()">Enviar pelo WhatsApp</button>
+    </div>
+
+    <div class="lesson-block">
+      <div class="lesson-kicker">Seu próximo passo</div>
+      <h3>Existe uma aula para você sair desse Lugar Emocional</h3>
+      <p>Agora que você entendeu de onde está se relacionando, eu preparei uma aula para te mostrar qual movimento precisa começar para você sair desse Lugar e voltar para o teu Lugar.</p>
+      <a id="lessonBtn" class="lesson-btn" href="COLE_AQUI_O_LINK_DA_AULA" target="_blank" rel="noopener">ASSISTIR À AULA — COMO SAIR DESSE LUGAR</a>
     </div>
   </section>
 </div>
@@ -168,22 +173,7 @@ function pickEvidence(group,n){
  for(const e of src)if(!out.includes(e)){out.push(e);if(out.length>=n)break}
  return out;
 }
-function finish(){
- const r=calculate();document.getElementById("quiz").classList.add("hidden");document.getElementById("result").classList.remove("hidden");
- const title=document.getElementById("resultTitle"),lead=document.getElementById("resultLead"),cards=document.getElementById("resultCards");
- if(!r.primary){
-  title.textContent="Teu resultado mostra uma presença forte do Lugar Adulto";
-  lead.textContent="Nenhum dos sete Lugares Emocionais apareceu com força suficiente para dominar a forma como você está se relacionando hoje.";
-  cards.innerHTML=`<div class="result-box">
-    <b>O que isso mostra</b>
-    <p class="muted">Nas situações avaliadas, você mostrou recursos consistentes para perceber o que sente, conversar, respeitar limites, diferenciar responsabilidades e observar o que pertence ao outro sem precisar assumir tudo para si.</p>
-    <p class="muted">Isso não significa ausência de dificuldade, conflito ou dor. Significa que, neste momento, os movimentos emocionais avaliados não apareceram com repetição e força suficientes para dominar o teu resultado.</p>
-  </div>
-  <div class="result-box">
-    <b>Recursos Adultos encontrados</b>
-    <p class="muted">${r.adult.count} de 24 situações apresentaram uma resposta adulta.</p>
-  </div>`;
-}
+
  else{
   title.textContent=r.technicalTie?"Dois movimentos apareceram praticamente com a mesma força":r.primary.label;
   lead.textContent=r.technicalTie?`${r.primary.label} e ${r.associated.label} ficaram tecnicamente muito próximos no teu resultado.`:`Esse foi o movimento que apareceu com mais força e consistência nas tuas respostas.`;
@@ -193,14 +183,309 @@ function finish(){
    <p class="muted">${pickEvidence(x,i===0?3:1).map(e=>"• "+e.answerText).join("<br>")}</p></div>`).join("")+
    `<div class="result-box"><b>Recursos Adultos encontrados</b><p class="muted">${r.adult.count} de 24 situações apresentaram resposta adulta.</p></div>`;
  }
-
+ renderAudit();
+ document.getElementById("audit").classList.remove("hidden");
  window.scrollTo({top:0,behavior:"smooth"});
 }
 function loadAdult(){answers={};for(let q=1;q<=24;q++)answers[q]=ADULT_PROFILE[q];idx=23;renderQ()}
 function loadMixed(){const a=["C","D","C","A","B","D","A","A","D","C","A","D","B","A","D","B","C","D","B","C","D","A","D","A"];answers={};a.forEach((v,i)=>answers[i+1]=v);idx=23;renderQ()}
 
+function buildAudit(){
+ const r=calculate();
+ const rows=[];
+ for(let q=1;q<=24;q++){
+   const a=answers[q];
+   if(!a) continue;
+   const c=code(q,a), m=MATRIX[c];
+   rows.push({
+     pergunta:q,
+     codigo:c,
+     letra:a,
+     texto:QUESTIONS[q-1].opts[a],
+     lugar:LABELS[m.place],
+     place:m.place,
+     forca:m.strength,
+     funcao:m.function,
+     familia:m.family
+   });
+ }
+ return {result:r, rows};
+}
+
+function renderAudit(){
+ const data=buildAudit(), r=data.result;
+ const sum=document.getElementById("auditSummary");
+ const ranked=r.ranking.map(x=>`
+   <tr>
+     <td>${x.label}</td>
+     <td>${x.weighted} / ${x.max}</td>
+     <td>${x.pct}%</td>
+     <td>${x.intensity}</td>
+     <td>${x.evidenceCount}</td>
+     <td>${x.confidence}</td>
+   </tr>`).join("");
+ sum.innerHTML=`
+   <div class="result-box">
+     <b>Resumo do motor</b>
+     <p class="muted">
+       Predominante: ${r.primary ? r.primary.label : "nenhum"}<br>
+       Associado: ${r.associated ? r.associated.label : "nenhum"}<br>
+       Complementar: ${r.complementary ? r.complementary.label : "nenhum"}<br>
+       Empate técnico: ${r.technicalTie ? "SIM" : "não"}<br>
+       Recursos Adultos: ${r.adult.count}/24
+     </p>
+     <table class="score-table">
+       <thead><tr><th>Lugar</th><th>Pontos</th><th>Índice</th><th>Intensidade</th><th>Evidências</th><th>Confiança</th></tr></thead>
+       <tbody>${ranked}</tbody>
+     </table>
+   </div>`;
+ document.getElementById("auditRows").innerHTML=data.rows.map(x=>`
+   <div class="audit-row">
+     <strong>Pergunta ${x.pergunta} — <span class="code">${x.codigo}</span></strong>
+     <div class="audit-answer">${x.letra}. ${x.texto}</div>
+     <div class="audit-meta">
+       <b>Lugar:</b> ${x.lugar}<br>
+       <b>Força:</b> ${x.forca}<br>
+       <b>Função:</b> ${x.funcao}<br>
+       <b>Família:</b> ${x.familia}
+     </div>
+   </div>`).join("");
+}
+
+function openAuditNow(){
+ const missing=[];
+ for(let q=1;q<=24;q++) if(!answers[q]) missing.push(q);
+ if(missing.length){
+   alert("Ainda faltam respostas nas perguntas: "+missing.join(", "));
+   return;
+ }
+ renderAudit();
+ document.getElementById("audit").classList.remove("hidden");
+ document.getElementById("audit").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function closeAudit(){document.getElementById("audit").classList.add("hidden")}
+function copyAudit(){
+ const data=buildAudit(), r=data.result;
+ const lines=[
+   "DIAGNÓSTICO O SEU LUGAR® — AUDITORIA",
+   "",
+   "Predominante: "+(r.primary?r.primary.label:"nenhum"),
+   "Associado: "+(r.associated?r.associated.label:"nenhum"),
+   "Complementar: "+(r.complementary?r.complementary.label:"nenhum"),
+   "Empate técnico: "+(r.technicalTie?"SIM":"não"),
+   "Adulto: "+r.adult.count+"/24",
+   "",
+   ...data.rows.map(x=>`${x.codigo} | ${x.lugar} | ${x.forca} | ${x.funcao} | ${x.texto}`)
+ ];
+ navigator.clipboard.writeText(lines.join("\n")).then(()=>alert("Resumo copiado."));
+}
 
 
+const PLACE_MODULES={
+  crianca:{
+    title:"Lugar da Criança",
+    meaning:"O Lugar da Criança aparece quando determinadas atitudes, mudanças ou sinais vindos do parceiro começam a ganhar peso sobre a segurança que você sente dentro do vínculo.",
+    not:"Isso não significa que você seja infantil ou imatura. Também não significa que querer carinho, presença ou reciprocidade seja um problema.",
+    mechanism:"O ponto central aparece quando os sinais do vínculo começam a participar demais da tua segurança emocional.",
+    direction:"O movimento é diferenciar o que está acontecendo na relação daquilo que esse acontecimento começa a significar dentro de você."
+  },
+  fuga:{
+    title:"Lugar da Fuga",
+    meaning:"O Lugar da Fuga aparece quando, diante de situações emocionalmente difíceis ou desgastantes, você reduz a própria exposição para se proteger.",
+    not:"Isso não significa frieza, falta de amor ou vontade de terminar. A Fuga aparece quando falar, mostrar ou permanecer presente começa a parecer emocionalmente arriscado demais.",
+    mechanism:"O ponto central é reduzir exposição para reduzir impacto emocional.",
+    direction:"O movimento é perceber quando se proteger está fazendo você retirar justamente aquilo que precisa ser reconhecido e colocado na relação."
+  },
+  defesa:{
+    title:"Lugar da Defesa e Reatividade",
+    meaning:"Esse Lugar aparece quando determinadas situações aumentam a necessidade de explicar, justificar, corrigir uma interpretação ou proteger a própria posição.",
+    not:"Isso não significa gostar de brigar ou querer estar sempre certa.",
+    mechanism:"Quando algo importante parece ameaçado, aumenta a necessidade de defender o próprio lado.",
+    direction:"O movimento é criar espaço entre aquilo que te toca emocionalmente e a necessidade imediata de responder, provar ou corrigir."
+  },
+  desequilibrio:{
+    title:"Lugar do Desequilíbrio de Troca",
+    meaning:"Esse Lugar aparece quando você percebe menos movimento vindo do outro e tende a aumentar ou manter o teu próprio movimento para que aquilo que é importante não pare.",
+    not:"Isso não significa simplesmente que você faz mais coisas do que teu parceiro, nem prova que o outro não faz nada.",
+    mechanism:"Diante da percepção de falta do outro, você aumenta a tua participação para compensar.",
+    direction:"O movimento é diferenciar contribuição de compensação e perceber o que continua vindo de uma escolha e o que passou a existir porque você sente que, se parar, nada acontece."
+  },
+  pai_mae:{
+    title:"Lugar de Pai/Mãe do Parceiro",
+    meaning:"Esse Lugar aparece quando você começa a ocupar mais espaço na orientação, condução, acompanhamento ou supervisão daquilo que pertence ao parceiro.",
+    not:"Isso não significa que orientar ou ajudar seja errado.",
+    mechanism:"A parceria perde horizontalidade quando você passa a se responsabilizar também pela condução do outro.",
+    direction:"O movimento é devolver ao outro o espaço de experimentar, decidir e responder pela própria parte sem você precisar conduzir tudo."
+  },
+  salvador:{
+    title:"Lugar do Salvador",
+    meaning:"O Lugar do Salvador aparece quando a dificuldade, problema ou possível consequência vivida pelo outro também coloca você em movimento para aliviar, resolver ou evitar que aquilo aconteça.",
+    not:"Isso não significa que ajudar seja errado ou que você precise se tornar indiferente.",
+    mechanism:"O sofrimento ou a dificuldade do outro também começa a virar uma responsabilidade tua de intervenção.",
+    direction:"O movimento é distinguir presença de resgate: estar ao lado sem precisar assumir aquilo que o outro ainda pode conduzir por si."
+  },
+  distancia:{
+    title:"Lugar da Distância Silenciosa",
+    meaning:"A Distância Silenciosa aparece quando a relação continua funcionando na rotina, mas os movimentos espontâneos de conexão, presença e vida de casal vão ficando menores.",
+    not:"Isso não significa automaticamente falta de amor ou fim da relação.",
+    mechanism:"A relação continua funcionando enquanto a conexão deixa de ocupar o mesmo espaço.",
+    direction:"O movimento é perceber onde o casal deixou de existir como casal dentro da rotina e reconstruir presença e encontro."
+  }
+};
+
+function esc(s){
+  return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+function evText(e){ return esc(e.answerText||""); }
+
+function buildDevolutiva(r){
+  const out=[];
+
+  if(!r.primary){
+    const adultCount=r.adult.count;
+    out.push(`
+      <section class="dv-block">
+        <div class="dv-label">O que apareceu com mais força</div>
+        <h3>Teu resultado mostra uma presença consistente do Lugar Adulto</h3>
+        <p>Nenhum dos sete Lugares Emocionais apareceu com repetição e força suficientes para dominar a forma como você está se relacionando hoje.</p>
+        <p>Isso não significa ausência de dificuldade, conflito ou dor. Significa que, nas situações avaliadas, você demonstrou recursos para perceber o que sente, conversar, respeitar limites, diferenciar responsabilidades e observar aquilo que pertence ao outro sem precisar assumir tudo para si.</p>
+        <div class="dv-quote">${adultCount} das 24 situações apresentaram recursos Adultos.</div>
+      </section>`);
+    const adultEv=r.adult.evidence.slice(0,5);
+    if(adultEv.length){
+      out.push(`
+        <section class="dv-block">
+          <div class="dv-label">Como isso aparece na tua vida real</div>
+          <h3>Teu Adulto já aparece em situações concretas</h3>
+          <div class="evidence-list">${adultEv.map(e=>`<div class="evidence-item">${evText(e)}</div>`).join("")}</div>
+        </section>`);
+    }
+    out.push(`
+      <section class="dv-block">
+        <div class="dv-label">Direção</div>
+        <h3>O movimento agora não começa do zero</h3>
+        <p>O teu diagnóstico mostra que você já consegue permanecer no teu Lugar em diferentes situações. O próximo passo é continuar fortalecendo esses recursos justamente nos contextos que mais pressionam a relação.</p>
+      </section>`);
+    return out.join("");
+  }
+
+  const p=r.primary;
+  const pm=PLACE_MODULES[p.place];
+  const mainEv=pickEvidence(p,5);
+
+  out.push(`
+    <section class="dv-block">
+      <div class="dv-label">O Lugar que apareceu com mais força</div>
+      <h3>${esc(pm.title)}</h3>
+      <p>O teu resultado mostrou que, hoje, esse é o movimento que aparece com mais força na forma como você se relaciona.</p>
+      <p>${esc(pm.meaning)}</p>
+      <p>${esc(pm.not)}</p>
+    </section>`);
+
+  if(mainEv.length){
+    out.push(`
+      <section class="dv-block">
+        <div class="dv-label">Como isso aparece na tua vida real</div>
+        <h3>As tuas próprias respostas mostraram esse movimento</h3>
+        <div class="evidence-list">
+          ${mainEv.map(e=>`<div class="evidence-item">${evText(e)}</div>`).join("")}
+        </div>
+        <p style="margin-top:14px">Separadamente, cada uma dessas situações poderia parecer pequena. Quando o mesmo movimento aparece em contextos diferentes, ele começa a mostrar de onde você está se relacionando com mais frequência hoje.</p>
+      </section>`);
+  }
+
+  if(r.associated){
+    const a=r.associated;
+    const am=PLACE_MODULES[a.place];
+    const assocEv=pickEvidence(a,2);
+    out.push(`
+      <section class="dv-block">
+        <div class="dv-label">Outro movimento importante no teu resultado</div>
+        <h3>${esc(am.title)}</h3>
+        <p>Esse não foi o único movimento relevante que apareceu. ${esc(am.meaning)}</p>
+        ${assocEv.length?`<div class="evidence-list">${assocEv.map(e=>`<div class="evidence-item">${evText(e)}</div>`).join("")}</div>`:""}
+      </section>`);
+
+    out.push(`
+      <section class="dv-block">
+        <div class="dv-label">O que os dois movimentos mostram juntos</div>
+        <h3>Eles podem coexistir em situações diferentes</h3>
+        <p>O diagnóstico não afirma que um Lugar causa o outro. O que ele mostra é que os dois movimentos aparecem dentro da tua forma de se relacionar hoje, em contextos diferentes.</p>
+        <p>De um lado, <strong>${esc(pm.mechanism)}</strong> Ao mesmo tempo, também aparece <strong>${esc(am.mechanism.toLowerCase())}</strong></p>
+      </section>`);
+  }
+
+  out.push(`
+    <section class="dv-block">
+      <div class="dv-label">O custo desse movimento</div>
+      <h3>O que isso pode começar a produzir para você</h3>
+      <p>Quando um Lugar Emocional passa a ocupar espaço repetidamente, o custo não está apenas no comportamento visível. Ele aparece na energia que você gasta, no quanto precisa se adaptar, antecipar, controlar, compensar, se proteger ou buscar segurança para conseguir permanecer na relação.</p>
+      <p>O ponto importante é observar onde esse movimento deixou de ser uma escolha consciente e passou a acontecer quase automaticamente.</p>
+    </section>`);
+
+  const adultEv=r.adult.evidence.slice(0,4);
+  if(adultEv.length){
+    out.push(`
+      <section class="dv-block">
+        <div class="dv-label">O que teu diagnóstico também encontrou de força em você</div>
+        <h3>Teu Lugar Adulto já aparece</h3>
+        <p>Você não responde a todas as situações a partir dos Lugares Emocionais. Em diferentes momentos, as tuas respostas mostraram recursos de Adulto.</p>
+        <div class="resource-list">
+          ${adultEv.map(e=>`<div class="resource-item">${evText(e)}</div>`).join("")}
+        </div>
+        <p style="margin-top:14px">Isso é importante porque o movimento não começa do zero. A direção é ampliar esses recursos justamente para os contextos em que o Lugar predominante ainda ganha mais força.</p>
+      </section>`);
+  }
+
+  out.push(`
+    <section class="dv-block">
+      <div class="dv-label">Onde está o ponto que precisa ser reorganizado</div>
+      <h3>O centro do teu resultado</h3>
+      <p>${esc(pm.mechanism)}</p>
+      <p>${esc(pm.direction)}</p>
+    </section>`);
+
+  out.push(`
+    <section class="dv-block">
+      <div class="dv-label">O teu próximo movimento</div>
+      <h3>Voltar para O Seu Lugar®</h3>
+      <p>O objetivo não é deixar de amar, cuidar, sentir ou precisar. É conseguir fazer tudo isso permanecendo no teu Lugar.</p>
+      <div class="dv-quote">${esc(pm.direction)}</div>
+    </section>`);
+
+  return out.join("");
+}
+
+function getDevolutivaPlainText(){
+  const el=document.getElementById("fullDevolutiva");
+  return el.innerText.trim();
+}
+
+async function copyDevolutiva(){
+  const text=getDevolutivaPlainText();
+  try{
+    await navigator.clipboard.writeText(text);
+    alert("Sua devolutiva foi copiada.");
+  }catch(e){
+    const ta=document.createElement("textarea");
+    ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+    alert("Sua devolutiva foi copiada.");
+  }
+}
+
+function shareWhatsApp(){
+  const text=getDevolutivaPlainText();
+  const url="https://wa.me/?text="+encodeURIComponent("Meu Diagnóstico O Seu Lugar®\n\n"+text);
+  window.open(url,"_blank");
+}
+
+function finish(){
+  const r=calculate();
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("result").classList.remove("hidden");
+  document.getElementById("fullDevolutiva").innerHTML=buildDevolutiva(r);
+  window.scrollTo({top:0,behavior:"smooth"});
+}
 
 renderQ();
 </script>
