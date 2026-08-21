@@ -429,6 +429,22 @@
     const OPPORTUNITIES={"crianca": 13, "fuga": 12, "pai_mae": 10, "desequilibrio": 10, "defesa": 8, "salvador": 8, "distancia": 6};
     const PLACES=["crianca","fuga","pai_mae","desequilibrio","defesa","salvador","distancia"];
 
+    // Referências da interface e controles de estado
+    const form=document.getElementById("quiz");
+    const statusText=document.getElementById("statusText");
+    const resultCard=document.getElementById("resultCard");
+    const btnCopy=document.getElementById("btnCopy");
+    const btnPrint=document.getElementById("btnPrint");
+    const btnWhats=document.getElementById("btnWhats");
+
+    let primeiraRespostaRegistrada=false;
+    let diagnosticoConcluidoRegistrado=false;
+    let whatsappRegistrado=false;
+    let copiaRegistrada=false;
+
+    const yearEl=document.getElementById("year");
+    if(yearEl) yearEl.textContent=new Date().getFullYear();
+
 
 
     const visualOrders={
