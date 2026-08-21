@@ -429,244 +429,499 @@
     const OPPORTUNITIES={"crianca": 13, "fuga": 12, "pai_mae": 10, "desequilibrio": 10, "defesa": 8, "salvador": 8, "distancia": 6};
     const PLACES=["crianca","fuga","pai_mae","desequilibrio","defesa","salvador","distancia"];
 
-    const PLACE_TEXT={
-      crianca:{
-        name:"Lugar da Criança",
-        intro:"O teu resultado mostrou que, hoje, o Lugar da Criança é o movimento que aparece com mais força na forma como você se relaciona.",
-        meaning:"Esse Lugar aparece quando determinadas atitudes, mudanças ou sinais vindos do parceiro começam a ganhar peso sobre a segurança que você sente dentro do vínculo.",
-        not:"Isso não significa que você seja infantil ou imatura. Também não significa que querer carinho, presença, atenção ou reciprocidade seja um problema.",
-        mechanism:"Os sinais do vínculo começam a participar demais da tua segurança emocional.",
-        cost:"Quando isso se repete, uma mudança no outro pode ganhar um significado maior do que o acontecimento em si e aumentar a necessidade de confirmação.",
-        direction:"O movimento é diferenciar aquilo que está acontecendo na relação daquilo que esse acontecimento começa a significar dentro de você."
-      },
-      fuga:{
-        name:"Lugar da Fuga",
-        intro:"O teu resultado mostrou que, hoje, o Lugar da Fuga é o movimento que aparece com mais força na forma como você se relaciona.",
-        meaning:"A Fuga aparece quando, diante de situações emocionalmente difíceis ou desgastantes, você começa a reduzir aquilo que fala, mostra ou sustenta para se proteger.",
-        not:"Isso não significa frieza, falta de amor ou vontade de terminar.",
-        mechanism:"Reduzir exposição para reduzir impacto emocional.",
-        cost:"O custo é que sentimentos e necessidades importantes podem ficar menos visíveis justamente nas situações em que mais precisariam ser reconhecidos.",
-        direction:"O movimento é perceber quando se proteger está custando a própria expressão e aprender a permanecer presente sem precisar desaparecer emocionalmente."
+
+    const PLACE_LIBRARY={
+      distancia:{
+        name:"Lugar da Distância Silenciosa",
+        primary:`O teu resultado mostrou que o <strong>Lugar da Distância Silenciosa</strong> é o movimento que aparece com mais força na forma como você está vivendo o teu relacionamento hoje.
+
+Esse Lugar aparece quando a relação continua existindo e muitas vezes até funcionando na rotina, mas a conexão emocional começa a ocupar cada vez menos espaço.
+
+Vocês podem continuar conversando sobre a casa, os filhos, o trabalho, os compromissos e aquilo que precisa ser resolvido. Mas vão diminuindo justamente os pequenos movimentos que fazem duas pessoas se sentirem casal: a procura espontânea, a vontade de compartilhar, o carinho, a curiosidade sobre o outro e a sensação de que aquela pessoa ainda é um dos primeiros lugares para onde você vai quando alguma coisa acontece.
+
+E existe uma característica importante nesse Lugar: <strong>a distância raramente começa com uma decisão de se afastar.</strong> Ela costuma ser construída aos poucos.
+
+Por isso, a Distância Silenciosa não fala apenas sobre quanto vocês conversam. Ela revela <strong>quanto da vida emocional de vocês ainda está sendo vivida como casal.</strong>`,
+        associated:`O segundo movimento importante no teu resultado foi o <strong>Lugar da Distância Silenciosa</strong>.
+
+Isso mostra que, além do Lugar predominante, existem situações em que a conexão, a procura ou o compartilhamento entre vocês já ocupam menos espaço.
+
+A Distância não conduz toda a tua leitura, mas acrescenta uma informação importante: <strong>em determinados pontos, você já está se acostumando a viver algumas partes da tua vida emocional mais separada do relacionamento.</strong>`,
+        complementary:`O <strong>Lugar da Distância Silenciosa</strong> apareceu como terceiro movimento do teu diagnóstico.
+
+Ele tem menos força do que os dois primeiros, mas não está ali por acaso. Algumas respostas mostram que já existem situações específicas em que você procura menos, compartilha menos ou percebe uma redução da conexão entre vocês.
+
+Isso merece atenção porque a Distância Silenciosa costuma começar exatamente assim: <strong>não ocupando a relação inteira, mas aparecendo em pequenos espaços que vão deixando de ser compartilhados.</strong>`,
+        revealQuestion:"O que você realmente deixou de querer — e o que apenas deixou de esperar?",
+        revealBase:"Nem tudo aquilo de que você parou de falar deixou de ser importante para você. Algumas coisas podem apenas ter deixado de ser esperadas depois de repetidas frustrações.",
+        costTitle:"Normalização da desconexão",
+        costBase:`O custo da Distância Silenciosa nem sempre aparece numa grande discussão ou num acontecimento específico.
+
+Muitas vezes ele aparece justamente naquilo que vai deixando de acontecer.
+
+Você procura menos. Compartilha menos. Espera menos. E, aos poucos, começa a construir uma vida emocional em que determinadas partes já não passam pelo relacionamento.
+
+O ponto mais delicado é quando essa redução deixa de chamar atenção.
+
+<strong>Aquilo que antes faria falta começa a parecer normal.</strong>`,
+        reorganizeTitle:"Adaptação à desconexão",
+        reorganize:`O ponto central não está simplesmente em vocês conversarem ou se procurarem menos.
+
+O que precisa ser reorganizado é <strong>a forma como você foi se adaptando emocionalmente à redução da conexão entre vocês.</strong>
+
+Antes de tentar simplesmente se aproximar novamente, existe uma diferença que precisa ficar clara: <strong>o que realmente deixou de fazer sentido para você e o que você apenas deixou de esperar porque se cansou daquilo que acontecia quando esperava.</strong>`
       },
       defesa:{
         name:"Lugar da Defesa e Reatividade",
-        intro:"O teu resultado mostrou que, hoje, o Lugar da Defesa e Reatividade é o movimento que aparece com mais força na forma como você se relaciona.",
-        meaning:"Esse Lugar aparece quando determinadas situações aumentam a necessidade de explicar, justificar, corrigir uma interpretação ou proteger a própria posição.",
-        not:"Isso não significa gostar de brigar ou querer estar sempre certa.",
-        mechanism:"Quando algo importante parece ameaçado, aumenta a necessidade de proteger o próprio lado.",
-        cost:"A tentativa de ser compreendida pode começar a ocupar mais espaço do que a própria conversa, dificultando escuta e reparação.",
-        direction:"O movimento é criar espaço entre aquilo que toca emocionalmente e a necessidade imediata de responder, provar ou corrigir."
+        primary:`O teu resultado mostrou que o <strong>Lugar da Defesa e Reatividade</strong> aparece com mais força na tua forma de se relacionar hoje.
+
+Esse Lugar surge quando determinadas situações despertam rapidamente a necessidade de <strong>explicar, justificar, corrigir uma interpretação ou proteger o teu lado.</strong>
+
+Defesa não significa necessariamente gritar ou discutir. Ela também aparece quando você sente necessidade de explicar várias vezes aquilo que quis dizer, mostrar por que agiu daquela maneira ou garantir que o outro não fique com uma interpretação sobre você que considera injusta.
+
+Existe uma diferença entre esclarecer algo importante e <strong>precisar ser compreendida antes de conseguir compreender aquilo que está acontecendo.</strong>`,
+        associated:`Também apareceu de forma importante o <strong>Lugar da Defesa e Reatividade</strong>.
+
+Isso mostra que existem situações em que aquilo que acontece entre vocês desperta em você necessidade de explicar, esclarecer ou proteger o teu lado.
+
+Esse segundo Lugar é importante porque revela <strong>o que acontece com você quando determinada conversa toca algo emocionalmente relevante.</strong>`,
+        complementary:`O <strong>Lugar da Defesa e Reatividade</strong> apareceu como terceiro movimento.
+
+Ele não conduz o teu resultado, mas mostra que existem situações específicas capazes de colocar você rapidamente numa posição de explicação, justificativa ou proteção.
+
+Essa camada ajuda a identificar <strong>quais assuntos ou situações conseguem tirar você da escuta e colocar você na necessidade de ser compreendida primeiro.</strong>`,
+        revealQuestion:"O que você está tentando proteger quando sente tanta necessidade de explicar o teu lado?",
+        revealBase:"Talvez o ponto mais importante não seja aquilo que você diz quando se defende, mas aquilo que sente que precisa proteger antes de começar a se defender.",
+        costTitle:"A conversa vira proteção",
+        costBase:`O custo da Defesa e Reatividade não está apenas na intensidade de algumas conversas.
+
+Está no que acontece quando conversar começa a exigir que você permaneça constantemente preparada para explicar ou proteger o teu lado.
+
+O assunto inicial pode se perder. A intenção de um precisa ser defendida. A interpretação do outro precisa ser corrigida. E aquilo que precisava ser compreendido fica em segundo plano.
+
+<strong>A conversa deixa de ser apenas um lugar de encontro e começa também a virar um lugar de proteção.</strong>`,
+        reorganizeTitle:"Proteção antes da compreensão",
+        reorganize:`O ponto central não está simplesmente em controlar a tua reação ou aprender a discutir menos.
+
+O que precisa ser reorganizado acontece <strong>antes da defesa</strong>.
+
+É perceber o momento em que aquilo que o outro diz deixa de ser somente algo que você precisa ouvir e começa a despertar necessidade de explicar, justificar ou proteger o teu lado.
+
+<strong>Antes de mudar a forma como você responde, é preciso reconhecer o que sente que precisa defender.</strong>`
+      },
+      crianca:{
+        name:"Lugar da Criança",
+        primary:`O teu resultado mostrou que o <strong>Lugar da Criança</strong> é o movimento que aparece com mais força hoje.
+
+Estar no Lugar da Criança <strong>não significa ser infantil ou imatura.</strong>
+
+Esse Lugar aparece quando determinados acontecimentos entre vocês começam a ter um peso muito grande sobre <strong>a segurança emocional que você sente dentro do relacionamento.</strong>
+
+Uma mudança no comportamento dele, uma distância, uma falta de iniciativa, um “não”, uma resposta diferente ou uma demora podem deixar de ser apenas acontecimentos e começar a responder perguntas internas maiores.
+
+O centro desse Lugar não é querer amor, carinho ou presença. O ponto está em perceber quando <strong>os sinais vindos do outro começam a determinar demais a segurança que você sente dentro do vínculo.</strong>`,
+        associated:`Também apareceu o <strong>Lugar da Criança</strong>.
+
+Isso acrescenta uma camada importante ao teu resultado. Existem situações em que aquilo que acontece entre vocês não toca apenas o problema daquele momento.
+
+Também toca <strong>a segurança que você sente dentro da relação.</strong>
+
+Por isso, determinados comportamentos podem ganhar um peso emocional maior e despertar necessidade de compreender rapidamente o que aquilo significa sobre vocês.`,
+        complementary:`O <strong>Lugar da Criança</strong> apareceu como terceiro movimento.
+
+Ele não conduz o teu resultado, mas algumas respostas mostram que existem situações específicas em que aquilo que o parceiro faz ou deixa de fazer toca também a tua sensação de segurança, importância ou vínculo.
+
+Essa terceira camada ajuda a compreender <strong>por que alguns acontecimentos mexem muito mais com você do que outros.</strong>`,
+        revealQuestion:"O que você está tentando descobrir sobre a relação através do comportamento dele?",
+        revealBase:"Às vezes você não está esperando apenas uma atitude dele. Está esperando que aquela atitude responda o que você significa para ele.",
+        costTitle:"Segurança oscilando conforme os sinais do vínculo",
+        costBase:`O custo do Lugar da Criança não está em querer carinho, presença ou segurança.
+
+O custo aparece quando determinados sinais do outro passam a ter força demais sobre a segurança que você sente dentro da relação.
+
+Uma mudança de comportamento pode despertar preocupação. Uma distância pode gerar perguntas. Uma resposta diferente pode ganhar um significado maior.
+
+<strong>Aos poucos, você pode começar a olhar para o comportamento dele para descobrir como está a relação, antes mesmo de conseguir conversar sobre aquilo que está acontecendo.</strong>`,
+        reorganizeTitle:"Segurança emocional vinculada demais aos sinais do outro",
+        reorganize:`O ponto central não está em deixar de querer carinho, presença ou segurança dentro do relacionamento.
+
+O que precisa ser reorganizado é <strong>o peso que determinados comportamentos do outro ganham sobre a segurança que você sente dentro do vínculo.</strong>
+
+O movimento começa quando você consegue separar: <strong>o que ele fez, o que aquilo despertou em você e o significado que você deu àquela situação.</strong>`
       },
       desequilibrio:{
         name:"Lugar do Desequilíbrio de Troca",
-        intro:"O teu resultado mostrou que, hoje, o Lugar do Desequilíbrio de Troca é o movimento que aparece com mais força na forma como você se relaciona.",
-        meaning:"Esse Lugar aparece quando você percebe menos movimento vindo do outro e tende a aumentar ou manter o teu próprio movimento para que aquilo que é importante não pare.",
-        not:"Isso não significa simplesmente que você faz mais coisas do que teu parceiro, nem prova que o outro não faz nada.",
-        mechanism:"Diante da percepção de falta do outro, você aumenta a tua participação para compensar.",
-        cost:"Com o tempo, aquilo que começou como contribuição pode virar cansaço, ressentimento ou sensação de que a relação depende demais de um lado.",
-        direction:"O movimento é diferenciar contribuição de compensação e perceber o que continua vindo de uma escolha e o que passou a existir porque você sente que, se parar, nada acontece."
+        primary:`O teu resultado mostrou que o <strong>Lugar do Desequilíbrio de Troca</strong> é o movimento que aparece com mais força hoje.
+
+Esse Lugar surge quando você percebe menos movimento vindo do outro e, diante disso, <strong>aumenta ou mantém o teu próprio movimento para compensar aquilo que sente que está faltando.</strong>
+
+Você procura. Inicia. Organiza. Lembra. Tenta aproximar. Mantém coisas acontecendo.
+
+E muitas vezes continua porque existe uma pergunta silenciosa: <strong>“Se eu também parar, o que acontece?”</strong>
+
+O centro do Desequilíbrio não é simplesmente fazer mais. É <strong>sentir que precisa fazer mais para compensar aquilo que percebe que não está vindo da outra parte.</strong>`,
+        associated:`Também apareceu o <strong>Lugar do Desequilíbrio de Troca</strong>.
+
+Isso mostra que existem áreas da relação em que, ao perceber pouco movimento vindo do parceiro, você aumenta ou mantém o teu próprio esforço para que aquilo continue acontecendo.
+
+Esse Lugar ajuda a entender situações de cansaço, ressentimento ou falta de reciprocidade, especialmente quando existe a sensação de que <strong>muita coisa depende da tua iniciativa.</strong>`,
+        complementary:`O <strong>Lugar do Desequilíbrio de Troca</strong> apareceu como terceiro movimento.
+
+Ele não organiza a maior parte do teu resultado, mas revela algumas situações em que você acaba colocando mais energia justamente porque percebe pouco movimento do outro lado.
+
+Essa camada mostra <strong>onde contribuir começa a se aproximar de compensar.</strong>`,
+        revealQuestion:"Se você diminuísse o teu movimento, o que teria medo de descobrir?",
+        revealBase:"Enquanto você ocupa automaticamente o espaço que percebe vazio, fica mais difícil enxergar quanto movimento realmente viria do outro lado.",
+        costTitle:"Cansaço, compensação e contabilidade emocional",
+        costBase:`O custo do Desequilíbrio não está somente na quantidade de coisas que você faz.
+
+Ele aparece quando aquilo que você oferece começa a carregar também a sensação de que precisa acontecer porque, se você não fizer, talvez não aconteça.
+
+Então você continua entregando, mas começa também a observar aquilo que não está recebendo.
+
+<strong>Você continua movimentando aquilo que já está cansada de sustentar.</strong>`,
+        reorganizeTitle:"Compensação",
+        reorganize:`O ponto central não está simplesmente em você fazer demais.
+
+O que precisa ser reorganizado é <strong>o movimento de aumentar a tua participação quando percebe pouca participação vindo do outro.</strong>
+
+Enquanto você ocupa automaticamente aquilo que sente que está faltando, fica difícil enxergar com clareza o que realmente pertence a você e qual movimento existe do outro lado.
+
+<strong>O movimento não é abandonar a relação. É deixar de preencher automaticamente todo espaço que você percebe vazio.</strong>`
       },
       pai_mae:{
         name:"Lugar de Pai/Mãe do Parceiro",
-        intro:"O teu resultado mostrou que, hoje, o Lugar de Pai/Mãe do Parceiro é o movimento que aparece com mais força na forma como você se relaciona.",
-        meaning:"Esse Lugar aparece quando você começa a ocupar mais espaço na orientação, condução, acompanhamento ou supervisão daquilo que pertence ao parceiro.",
-        not:"Isso não significa que orientar ou ajudar seja errado.",
-        mechanism:"A parceria perde horizontalidade quando você passa a se responsabilizar também pela condução do outro.",
-        cost:"Quanto mais você conduz aquilo que pertence ao parceiro, mais responsabilidades podem começar a ocupar espaço na tua vida e menos espaço sobra para uma relação entre dois adultos.",
-        direction:"O movimento é devolver ao outro o espaço de experimentar, decidir e responder pela própria parte sem você precisar conduzir tudo."
+        primary:`O teu resultado mostrou que o <strong>Lugar de Pai/Mãe do Parceiro</strong> aparece com mais força hoje.
+
+Esse Lugar surge quando você começa a ocupar espaço demais na <strong>condução daquilo que pertence ao outro adulto.</strong>
+
+Você lembra. Orienta. Acompanha. Corrige. Antecipa. Mostra como deveria ser feito.
+
+Muitas vezes isso começa com uma intenção legítima: ajudar, evitar problemas ou fazer a vida funcionar.
+
+Mas existe uma diferença entre construir junto e <strong>assumir responsabilidade pela forma como o outro conduz aquilo que pertence a ele.</strong>
+
+O ponto não é deixar de ajudar. É perceber <strong>onde você começou a ocupar uma responsabilidade que deveria continuar pertencendo ao outro adulto.</strong>`,
+        associated:`Também apareceu o <strong>Lugar de Pai/Mãe do Parceiro</strong>.
+
+Isso mostra que, em determinadas situações, você não apenas participa: acaba assumindo também parte da condução das escolhas, responsabilidades ou decisões do parceiro.
+
+Essa camada ajuda a enxergar <strong>onde apoiar começa a se aproximar de dirigir a forma como o outro deveria conduzir a própria parte.</strong>`,
+        complementary:`O <strong>Lugar de Pai/Mãe do Parceiro</strong> apareceu como terceiro movimento.
+
+Ele não conduz o resultado, mas existem situações em que você assume uma postura maior de orientação, acompanhamento ou correção.
+
+Essa terceira camada revela <strong>onde a relação entre dois adultos começa a perder um pouco da horizontalidade.</strong>`,
+        revealQuestion:"Em que momento ajudar começou também a significar conduzir?",
+        revealBase:"Ajudar e conduzir parecem movimentos parecidos por fora, mas colocam você em lugares completamente diferentes dentro da relação.",
+        costTitle:"Perda de horizontalidade entre dois adultos",
+        costBase:`O custo desse Lugar não está apenas em você assumir mais responsabilidades.
+
+Ele também aparece na posição que você começa a ocupar diante do parceiro.
+
+Quando você precisa lembrar, acompanhar, orientar ou garantir repetidamente aquilo que pertence a ele, deixa de existir apenas uma divisão desigual de tarefas. Também começa a existir uma diferença de posição.
+
+<strong>Você ocupa tanta condução que começa a faltar espaço para uma relação horizontal.</strong>`,
+        reorganizeTitle:"Responsabilidade pela condução do outro adulto",
+        reorganize:`O ponto central não está em deixar de ajudar ou construir junto.
+
+O que precisa ser reorganizado é <strong>a parte da condução do outro que você foi assumindo como se também fosse tua responsabilidade.</strong>
+
+Voltar para o teu Lugar exige reconhecer aquilo que pertence a você e <strong>devolver ao outro adulto aquilo que pertence a ele.</strong>`
       },
       salvador:{
         name:"Lugar do Salvador",
-        intro:"O teu resultado mostrou que, hoje, o Lugar do Salvador é o movimento que aparece com mais força na forma como você se relaciona.",
-        meaning:"O Salvador aparece quando a dificuldade, problema ou possível consequência vivida pelo outro também coloca você em movimento para aliviar, resolver ou evitar que aquilo aconteça.",
-        not:"Isso não significa que ajudar seja errado ou que você precise se tornar indiferente.",
-        mechanism:"A dificuldade do outro também começa a virar uma responsabilidade tua de intervenção.",
-        cost:"Quanto mais você entra naquilo que pertence ao outro, mais responsabilidades que não são completamente suas podem começar a ocupar espaço na tua vida.",
-        direction:"O movimento é distinguir presença de resgate: estar ao lado sem precisar assumir aquilo que o outro ainda pode conduzir por si."
+        primary:`O teu resultado mostrou que o <strong>Lugar do Salvador</strong> aparece com mais força hoje.
+
+Esse Lugar surge quando a dificuldade do outro coloca você rapidamente em movimento.
+
+Você percebe um problema e começa a pensar em como resolver. Percebe uma consequência e tenta evitá-la. Vê o outro sofrendo e sente necessidade de aliviar.
+
+Isso muitas vezes nasce do cuidado.
+
+Mas existe uma diferença entre <strong>estar ao lado</strong> e começar a assumir aquilo que o outro ainda poderia enfrentar, decidir ou resolver.
+
+O ponto não está em deixar de ajudar. Está em reconhecer <strong>onde o cuidado começa a se transformar em responsabilidade pela solução.</strong>`,
+        associated:`Também apareceu o <strong>Lugar do Salvador</strong>.
+
+Isso mostra que, diante de determinadas dificuldades do parceiro, você tende a entrar em movimento para ajudar, aliviar, resolver ou evitar consequências.
+
+Essa camada ajuda a perceber <strong>onde estar ao lado começa a se aproximar de assumir aquilo que ainda pertence ao outro.</strong>`,
+        complementary:`O <strong>Lugar do Salvador</strong> apareceu como terceiro movimento.
+
+Ele mostra que existem algumas situações específicas em que a dificuldade do parceiro desperta em você uma necessidade maior de intervir.
+
+Embora não conduza o resultado, ele revela <strong>onde ajudar começa a se aproximar de resolver pelo outro.</strong>`,
+        revealQuestion:"O que aconteceria se você permanecesse ao lado sem precisar resolver?",
+        revealBase:"Estar ao lado não exige necessariamente entrar no lugar do outro.",
+        costTitle:"A dificuldade do outro ocupa espaço demais dentro da própria vida",
+        costBase:`O custo do Salvador não está no cuidado.
+
+Ele aparece quando a dificuldade do outro começa a ocupar uma quantidade de energia que ultrapassa aquilo que realmente pertence a você.
+
+Você pensa. Procura soluções. Tenta evitar consequências. Entra para ajudar.
+
+E, aos poucos, pode ficar menos claro onde termina estar ao lado e onde começa assumir.
+
+<strong>Às vezes você entra para diminuir o peso que o outro carrega e termina aumentando a quantidade de peso que existe na tua própria vida.</strong>`,
+        reorganizeTitle:"Responsabilidade pela solução da dificuldade do outro",
+        reorganize:`O ponto central não está em deixar de cuidar de quem você ama.
+
+O que precisa ser reorganizado é <strong>o momento em que estar ao lado começa a se transformar em precisar resolver.</strong>
+
+Você pode apoiar alguém diante de uma dificuldade sem precisar assumir a responsabilidade de impedir que essa pessoa enfrente aquilo que pertence à própria vida.
+
+<strong>Estar ao lado não exige ocupar o lugar do outro.</strong>`
       },
-      distancia:{
-        name:"Lugar da Distância Silenciosa",
-        intro:"O teu resultado mostrou que a Distância Silenciosa é o movimento que aparece com mais força na experiência atual do teu relacionamento.",
-        meaning:"Ela aparece quando a relação continua funcionando na rotina, mas os movimentos espontâneos de conexão, presença e vida de casal vão ficando menores.",
-        not:"Isso não significa automaticamente falta de amor ou fim da relação.",
-        mechanism:"A relação continua funcionando enquanto a conexão deixa de ocupar o mesmo espaço.",
-        cost:"O risco é a distância começar a parecer normal e o casal aprender a funcionar sem realmente se encontrar.",
-        direction:"O movimento é perceber onde o casal deixou de existir como casal dentro da rotina e reconstruir movimentos reais de presença e encontro."
+      fuga:{
+        name:"Lugar da Fuga",
+        primary:`O teu resultado mostrou que o <strong>Lugar da Fuga</strong> é o movimento que aparece com mais força hoje.
+
+Fuga não significa necessariamente ir embora do relacionamento.
+
+Muitas vezes você continua ali. O que diminui é <strong>o quanto de você entra em determinadas situações emocionalmente difíceis.</strong>
+
+Você evita uma conversa. Guarda aquilo que sentiu. Adia. Diz que não vale a pena. Deixa determinado assunto para lá. Ou prefere não mostrar exatamente aquilo que está acontecendo dentro de você.
+
+No curto prazo, isso pode diminuir o desconforto. Mas aquilo que não é dito não necessariamente deixa de existir.
+
+Por isso, o centro da Fuga está em perceber <strong>quando reduzir a exposição se tornou a principal forma de reduzir o impacto emocional daquilo que acontece entre vocês.</strong>`,
+        associated:`Também apareceu o <strong>Lugar da Fuga</strong>.
+
+Isso mostra que existem situações em que você se protege diminuindo aquilo que fala, mostra ou sustenta emocionalmente.
+
+Nem sempre porque aquilo deixou de importar.
+
+Em alguns momentos, <strong>entrar naquela situação parece custar mais emocionalmente do que recuar.</strong>`,
+        complementary:`O <strong>Lugar da Fuga</strong> apareceu como terceiro movimento.
+
+Ele não conduz o resultado, mas mostra situações específicas em que teu movimento de proteção é silenciar, evitar, adiar ou se retirar.
+
+Essa camada ajuda a enxergar <strong>onde você começa a diminuir a tua presença para não precisar lidar com aquilo que determinada situação desperta.</strong>`,
+        revealQuestion:"O que ficou sem ser dito depois que você decidiu que não valia mais a pena falar?",
+        revealBase:"Nem tudo aquilo sobre o que você parou de falar deixou de existir dentro de você.",
+        costTitle:"Menos desconforto imediato, mas menos verdade compartilhada",
+        costBase:`O custo da Fuga é particularmente silencioso porque, no curto prazo, ela funciona.
+
+Você evita uma conversa. Reduz o conflito. Não precisa entrar naquele desconforto.
+
+Mas aquilo que deixou de ser dito não necessariamente deixou de existir.
+
+Quando esse movimento se repete, a relação pode ter menos conflito aparente e, ao mesmo tempo, menos acesso àquilo que realmente acontece dentro de você.
+
+<strong>A ausência de discussão não significa necessariamente presença de conexão.</strong>`,
+        reorganizeTitle:"Retirada como proteção",
+        reorganize:`O ponto central não está em obrigar você a falar tudo ou resolver qualquer assunto imediatamente.
+
+O que precisa ser reorganizado é <strong>quando o silêncio, o adiamento ou o afastamento deixam de ser uma pausa consciente e começam a ser a principal maneira de evitar aquilo que a situação desperta.</strong>
+
+Existe diferença entre escolher não conversar agora e sentir que é melhor nunca mais tocar no assunto.
+
+<strong>Uma pausa protege o momento da conversa. A Fuga evita aquilo que precisaria encontrar um lugar para ser dito.</strong>`
       }
     };
 
-    let primeiraRespostaRegistrada=false;
-    let diagnosticoConcluidoRegistrado=false;
-    let whatsappRegistrado=false;
-    let copiaRegistrada=false;
-
-    const form=document.getElementById("quiz");
-    const statusText=document.getElementById("statusText");
-    const resultCard=document.getElementById("resultCard");
-    const btnWhats=document.getElementById("btnWhats");
-    const btnCopy=document.getElementById("btnCopy");
-    const btnPrint=document.getElementById("btnPrint");
-    document.getElementById("year").textContent=new Date().getFullYear();
-
-    const visualOrders={
-      1:["C","A","D","B"],2:["B","D","A","C"],3:["D","A","C","B"],4:["B","C","D","A"],
-      5:["C","D","A","B"],6:["A","C","B","D"],7:["B","D","C","A"],8:["D","B","A","C"],
-      9:["C","A","D","B"],10:["B","C","D","A"],11:["D","A","B","C"],12:["C","D","B","A"],
-      13:["B","A","D","C"],14:["D","C","A","B"],15:["A","D","C","B"],16:["C","B","D","A"],
-      17:["B","D","A","C"],18:["D","A","C","B"],19:["C","A","B","D"],20:["B","C","A","D"],
-      21:["D","B","C","A"],22:["C","A","D","B"],23:["B","D","A","C"],24:["D","C","B","A"]
+    const PAIR_LIBRARY={
+      "distancia|defesa":["Afastar-se em algumas situações e ainda precisar ser compreendida em outras.","Você pode ter diminuído a aproximação sem ter deixado de se importar com aquilo que acontece entre vocês."],
+      "distancia|crianca":["Conviver com menos conexão sem necessariamente se sentir segura com essa distância.","Uma parte tua pode ter aprendido a esperar menos enquanto outra ainda observa o que essa distância significa sobre vocês."],
+      "distancia|desequilibrio":["Fazer movimentos para sustentar uma conexão que você percebe enfraquecendo.","Você pode estar cansada não apenas da distância, mas de sentir que ainda precisa fazer movimento para que a distância não aumente."],
+      "distancia|pai_mae":["Funcionar juntos sem necessariamente se encontrar como casal.","Vocês podem continuar muito conectados pelas responsabilidades enquanto a conexão entre vocês como casal ocupa cada vez menos espaço."],
+      "distancia|salvador":["Cuidar da vida do outro enquanto a vida do casal recebe menos espaço.","Estar presente nos problemas dele não significa necessariamente sentir presença dentro da relação."],
+      "distancia|fuga":["O silêncio proteger do desconforto enquanto menos de você chega à relação.","Aquilo que você deixa de dizer para evitar desgaste também deixa de ser compartilhado entre vocês."],
+      "defesa|crianca":["Defender-se justamente quando também precisa sentir segurança no vínculo.","Em algumas situações, ser compreendida pode ganhar tanta importância porque aquilo que aconteceu também mexeu com a segurança que você sente entre vocês."],
+      "defesa|desequilibrio":["Entregar muito e ainda sentir necessidade de explicar por que aquilo está pesando.","Algumas conversas podem tocar ainda mais porque chegam num lugar em que você já sente que existe muito movimento vindo de você."],
+      "defesa|pai_mae":["Conduzir e depois precisar defender a própria condução.","Quando você assume a condução de determinada situação, ser questionada sobre ela também pode colocar você rapidamente na necessidade de explicar por que fez daquela maneira."],
+      "defesa|salvador":["Tentar ajudar e depois precisar explicar por que ajudou.","Quando aquilo que você fez para ajudar não é compreendido dessa forma pelo outro, pode surgir uma necessidade forte de mostrar qual era a tua intenção."],
+      "defesa|fuga":["Oscilar entre explicar demais e não querer mais falar.","Em algumas situações você luta para ser compreendida; em outras, o desgaste faz você preferir não se explicar mais."],
+      "crianca|desequilibrio":["Continuar fazendo para não precisar descobrir o que aconteceria se parasse.","Em algumas situações, diminuir o teu movimento não significa apenas fazer menos; significa também encarar o que realmente viria do outro lado sem a tua iniciativa."],
+      "crianca|pai_mae":["Ser forte na condução e vulnerável na segurança emocional.","Você pode assumir muita responsabilidade na vida prática e ainda sentir que determinadas atitudes dele têm força para mexer profundamente com a tua segurança na relação."],
+      "crianca|salvador":["A dificuldade dele também mexer com a forma como você se sente dentro da relação.","Em determinadas situações, vê-lo bem pode representar mais do que alívio por ele; pode também trazer tranquilidade para aquilo que você sente entre vocês."],
+      "crianca|fuga":["Sentir muito e mostrar pouco.","Algumas situações mexem profundamente com você justamente nos momentos em que encontra mais dificuldade para mostrar o que realmente aconteceu por dentro."],
+      "desequilibrio|pai_mae":["Fazer mais e começar também a conduzir mais.","Quando você sente que precisa garantir que as coisas aconteçam, pode acabar assumindo não apenas a execução, mas também a condução daquilo que deveria ser compartilhado."],
+      "desequilibrio|salvador":["Carregar pela ausência do outro e também pelos problemas do outro.","Em algumas situações você faz porque sente que, se não fizer, nada acontece; em outras, entra porque teme o que pode acontecer se não ajudar."],
+      "desequilibrio|fuga":["Continuar sustentando por fora enquanto começa a desistir por dentro.","Você pode continuar mantendo muitas coisas funcionando ao mesmo tempo em que vai deixando de mostrar o quanto aquilo está custando emocionalmente."],
+      "pai_mae|salvador":["Conduzir a vida do outro e também protegê-lo das próprias consequências.","Em algumas situações você mostra o caminho; em outras, acaba entrando também para resolver aquilo que surgiu no caminho."],
+      "pai_mae|fuga":["Ir da condução para a desistência.","Em alguns momentos você sente que precisa conduzir; em outros, depois de tanto assumir, surge vontade de simplesmente deixar que o outro se vire."],
+      "salvador|fuga":["Assumir demais e depois precisar desaparecer para não carregar mais.","Em determinadas situações você entra profundamente para ajudar e, quando aquilo começa a pesar demais, o movimento pode se inverter e virar afastamento."]
     };
 
-    function renderQuestions(){
-      form.innerHTML="";
-      QUESTIONS.forEach((item,idx)=>{
-        const q=idx+1;
-        const section=document.createElement("section");
-        section.className="section";
-        const order=visualOrders[q]||["A","B","C","D"];
-        section.innerHTML=`
-          <div class="question">
-            <div class="qtext"><span class="qnum">${q}.</span>${item.q}</div>
-            <div class="options choiceGrid">
-              ${order.map((internal,i)=>{
-                const visual=["A","B","C","D"][i];
-                return `<span class="choiceOption">
-                  <input type="radio" name="q${q}" id="q${q}_${internal}" value="${internal}" required>
-                  <label for="q${q}_${internal}"><span class="choiceLetter">${visual}</span><span>${item.opts[internal]}</span></label>
-                </span>`;
-              }).join("")}
-            </div>
-          </div>`;
-        form.appendChild(section);
-      });
+    function pairKey(a,b){
+      const order=["distancia","defesa","crianca","desequilibrio","pai_mae","salvador","fuga"];
+      return order.indexOf(a)<order.indexOf(b) ? `${a}|${b}` : `${b}|${a}`;
     }
-
-    function code(q,a){return `P${String(q).padStart(2,"0")}-${a}`;}
-    function intensity(p){if(p<20)return"Residual";if(p<35)return"Leve";if(p<60)return"Moderada";return"Forte";}
-    function confidence(n){return n>=3?"Alta":n===2?"Média":"Baixa";}
-
-    function getSelections(){
-      const arr=[]; let miss=0;
-      for(let q=1;q<=24;q++){
-        const chosen=form.querySelector(`input[name="q${q}"]:checked`);
-        if(!chosen){miss++;continue;}
-        arr.push({q,answer:chosen.value,code:code(q,chosen.value),text:QUESTIONS[q-1].opts[chosen.value]});
-      }
-      return {arr,miss};
-    }
-
-    function calculate(){
-      const scores={};
-      PLACES.forEach(p=>scores[p]={weighted:0,count:0,strengths:{MF:0,F:0,M:0},families:new Set(),evidence:[]});
-      const adult=[];
-      for(const s of getSelections().arr){
-        const m=MATRIX[s.code];
-        const ev={...s,...m};
-        if(m.place==="adulto"){adult.push(ev);continue;}
-        const slot=scores[m.place];
-        slot.weighted+=WEIGHTS[m.strength];
-        slot.count++; slot.strengths[m.strength]++; slot.families.add(m.family); slot.evidence.push(ev);
-      }
-      const ranking=PLACES.map(p=>{
-        const s=scores[p],pct=+(100*s.weighted/MAX[p]).toFixed(1),fam=s.families.size;
-        return {place:p,label:LABELS[p],pct,intensity:intensity(pct),eligible:s.count>=2&&pct>=20,
-          weighted:+s.weighted.toFixed(2),max:MAX[p],evidenceCount:s.count,
-          strengths:s.strengths,familyCount:fam,confidence:confidence(fam),families:[...s.families],evidence:s.evidence};
-      }).sort((a,b)=>(b.eligible-a.eligible)||(b.pct-a.pct)||(b.strengths.MF-a.strengths.MF)||(b.familyCount-a.familyCount)||(b.evidenceCount-a.evidenceCount));
-      const eligible=ranking.filter(x=>x.eligible);
-      const primary=eligible[0]||null,associated=eligible[1]||null,complementary=eligible[2]||null;
-      return {primary,associated,complementary,technicalTie:!!(primary&&associated&&Math.abs(primary.pct-associated.pct)<=5),
-        adult:{count:adult.length,pct:+(adult.length/24*100).toFixed(1),evidence:adult},ranking};
-    }
-
-    function pickEvidence(group,n){
-      if(!group)return[];
-      const rank={MF:3,F:2,M:1},src=[...group.evidence].sort((a,b)=>rank[b.strength]-rank[a.strength]),out=[],fam=new Set();
-      for(const e of src)if(!fam.has(e.family)){out.push(e);fam.add(e.family);if(out.length>=n)return out;}
-      for(const e of src)if(!out.includes(e)){out.push(e);if(out.length>=n)break;}
-      return out;
-    }
-
-    function getResultCode(){
-      const raw=getSelections().arr.map(x=>x.code).join("|"); let hash=2166136261;
-      for(let i=0;i<raw.length;i++){hash^=raw.charCodeAt(i);hash=Math.imul(hash,16777619);}
-      return "OSL-"+(hash>>>0).toString(36).toUpperCase().padStart(7,"0").slice(0,7);
-    }
-
+    function htmlParas(text){return String(text||"").split(/\n\s*\n/).map(p=>`<p>${p}</p>`).join("");}
     function evidenceHTML(items){return items.map(e=>`<div class="evidenceAnswer">${e.text}</div>`).join("");}
 
-    function pairText(p,a){
-      if(!a)return "";
-      const pm=PLACE_TEXT[p.place],am=PLACE_TEXT[a.place];
-      return `Em diferentes situações, esses dois movimentos podem coexistir. De um lado, ${pm.mechanism.toLowerCase()} Ao mesmo tempo, também aparece ${am.mechanism.toLowerCase()} O diagnóstico não afirma que um causa o outro; ele mostra que ambos aparecem na tua forma de se relacionar hoje.`;
+    function integrationNarrative(r){
+      const p1=PAIR_LIBRARY[pairKey(r.primary.place,r.associated.place)];
+      const p2=PAIR_LIBRARY[pairKey(r.primary.place,r.complementary.place)];
+      const p3=PAIR_LIBRARY[pairKey(r.associated.place,r.complementary.place)];
+      return `
+        <p>${p1 ? p1[1] : ""}</p>
+        ${p2?`<p>${p2[1]}</p>`:""}
+        ${p3?`<p>${p3[1]}</p>`:""}
+        ${p1?`<div class="evidenceAnswer"><strong>Tensão central do teu mapa:</strong><br>${p1[0]}</div>`:""}
+      `;
+    }
+
+    function revelationText(r){
+      const p=PLACE_LIBRARY[r.primary.place];
+      const pa=PAIR_LIBRARY[pairKey(r.primary.place,r.associated.place)];
+      const pc=PAIR_LIBRARY[pairKey(r.primary.place,r.complementary.place)];
+      return `
+        <p><strong>${p.revealQuestion}</strong></p>
+        <p>${p.revealBase}</p>
+        ${pa?`<p>${pa[1]}</p>`:""}
+        ${pc?`<p>${pc[1]}</p>`:""}
+      `;
+    }
+
+    function costText(r){
+      const p=PLACE_LIBRARY[r.primary.place];
+      const pa=PAIR_LIBRARY[pairKey(r.primary.place,r.associated.place)];
+      const pc=PAIR_LIBRARY[pairKey(r.primary.place,r.complementary.place)];
+      return htmlParas(p.costBase)+(pa?`<p>${pa[1]}</p>`:"")+(pc?`<p>${pc[1]}</p>`:"");
+    }
+
+    function reorganizeText(r){
+      const p=PLACE_LIBRARY[r.primary.place];
+      const pa=PAIR_LIBRARY[pairKey(r.primary.place,r.associated.place)];
+      const pc=PAIR_LIBRARY[pairKey(r.primary.place,r.complementary.place)];
+      return htmlParas(p.reorganize)+(pa?`<p>${pa[1]}</p>`:"")+(pc?`<p>${pc[1]}</p>`:"");
+    }
+
+    function buildPlainResult(r=calculate()){
+      const lines=["DIAGNÓSTICO O SEU LUGAR®","",`Código: ${getResultCode()}`];
+      if(!r.primary || !r.associated || !r.complementary){
+        lines.push("Não foi possível formar o mapa de três Lugares.");
+        return lines.join("\n");
+      }
+      const p=PLACE_LIBRARY[r.primary.place],a=PLACE_LIBRARY[r.associated.place],c=PLACE_LIBRARY[r.complementary.place];
+      const strip=s=>String(s).replace(/<[^>]+>/g,"").replace(/\n\s*\n/g,"\n");
+      lines.push(
+        `Lugar predominante: ${p.name}`,
+        `Movimento associado: ${a.name}`,
+        `Movimento complementar: ${c.name}`,
+        "",
+        "A LEITURA CENTRAL DO TEU DIAGNÓSTICO",
+        `O teu diagnóstico revelou três Lugares Emocionais importantes. O movimento que apareceu com mais força foi ${p.name}. Junto dele apareceu ${a.name} e, numa terceira camada, ${c.name}.`,
+        "",
+        strip(p.primary),
+        "",
+        "COMO ISSO APARECEU NAS TUAS RESPOSTAS:"
+      );
+      pickEvidence(r.primary,5).forEach(e=>lines.push("• "+e.text));
+      lines.push("",strip(a.associated));
+      pickEvidence(r.associated,3).forEach(e=>lines.push("• "+e.text));
+      lines.push("",strip(c.complementary));
+      pickEvidence(r.complementary,2).forEach(e=>lines.push("• "+e.text));
+      lines.push(
+        "",
+        "O QUE OS TEUS TRÊS LUGARES REVELAM JUNTOS",
+        (PAIR_LIBRARY[pairKey(r.primary.place,r.associated.place)]||[])[1]||"",
+        (PAIR_LIBRARY[pairKey(r.primary.place,r.complementary.place)]||[])[1]||"",
+        "",
+        "O QUE TALVEZ VOCÊ AINDA NÃO TENHA PERCEBIDO",
+        p.revealQuestion,
+        p.revealBase,
+        "",
+        "O CUSTO EMOCIONAL E RELACIONAL DESSES MOVIMENTOS",
+        strip(p.costBase),
+        "",
+        "O PONTO CENTRAL QUE PRECISA SER REORGANIZADO",
+        strip(p.reorganize)
+      );
+      return lines.join("\n");
     }
 
     function renderResult(){
       const r=calculate();
       document.getElementById("resultCode").textContent=getResultCode();
-      const pBox=document.getElementById("primaryPlace"),sBox=document.getElementById("secondaryPlace"),tBox=document.getElementById("thirdPlace");
-      const sWrap=document.getElementById("secondaryBox"),tWrap=document.getElementById("thirdBox");
 
-      if(!r.primary){
-        pBox.textContent="Presença consistente do Lugar Adulto";
-        sWrap.classList.add("hiddenPlace"); tWrap.classList.add("hiddenPlace");
-        document.getElementById("fullResult").innerHTML=`
-          <div class="resultSection dark"><h4>A leitura central do teu resultado</h4>
-          <p>Nenhum dos sete Lugares Emocionais apareceu com repetição e força suficientes para dominar a forma como você está se relacionando hoje.</p>
-          <p>Isso não significa ausência de dificuldade ou conflito. Significa que, nas situações avaliadas, você demonstrou recursos consistentes de Adulto.</p></div>
-          <div class="resultSection"><h4>Como isso aparece nas tuas respostas</h4>${evidenceHTML(r.adult.evidence.slice(0,6))}</div>
-          <div class="resultSection highlight"><h4>O teu próximo movimento</h4><p>O movimento não começa do zero. O teu diagnóstico mostra que você já consegue reconhecer sentimentos, limites e responsabilidades em diferentes situações. A direção é continuar fortalecendo esses recursos justamente nos contextos que mais pressionam o vínculo.</p></div>`;
-      } else {
-        const p=r.primary,a=r.associated,c=r.complementary,pt=PLACE_TEXT[p.place];
-        pBox.textContent=pt.name;
-        if(a){sWrap.classList.remove("hiddenPlace");sBox.textContent=PLACE_TEXT[a.place].name;} else sWrap.classList.add("hiddenPlace");
-        if(c){tWrap.classList.remove("hiddenPlace");tBox.textContent=PLACE_TEXT[c.place].name;} else tWrap.classList.add("hiddenPlace");
-
-        const pEv=pickEvidence(p,5),aEv=pickEvidence(a,2),adultEv=r.adult.evidence.slice(0,4);
-        const tie=r.technicalTie?'<p><strong>Importante:</strong> os dois primeiros movimentos ficaram tecnicamente muito próximos. A ordem organiza a leitura, mas ambos têm peso relevante no resultado.</p>':"";
-
+      if(!r.primary || !r.associated || !r.complementary){
+        document.getElementById("primaryPlace").textContent="Mapa incompleto";
+        document.getElementById("secondaryBox").classList.add("hiddenPlace");
+        document.getElementById("thirdBox").classList.add("hiddenPlace");
         document.getElementById("fullResult").innerHTML=
-          tie+
-          `<div class="resultSection dark"><h4>A leitura central do teu resultado</h4><p>${pt.intro}</p><p>${pt.meaning}</p><p>${pt.not}</p></div>`+
-          `<div class="resultSection"><h4>Por que esse resultado apareceu</h4><p>O diagnóstico não chegou a esse Lugar por uma única resposta. Ele apareceu repetidamente em diferentes situações que você reconheceu.</p>${evidenceHTML(pEv)}</div>`+
-          `<div class="resultSection"><h4>A intensidade desse movimento</h4><div class="intensityGrid">
-            <div class="intensityCard"><span class="intensityBadge">${p.intensity}</span><b>${pt.name}</b><p>${p.evidenceCount} evidências em ${p.familyCount} contextos diferentes. Confiança contextual: ${p.confidence}.</p></div>
-            ${a?`<div class="intensityCard"><span class="intensityBadge">${a.intensity}</span><b>${PLACE_TEXT[a.place].name}</b><p>${a.evidenceCount} evidências em ${a.familyCount} contextos diferentes.</p></div>`:""}
-          </div></div>`+
-          (a?`<div class="resultSection highlight"><h4>Outro movimento importante: ${PLACE_TEXT[a.place].name}</h4><p>${PLACE_TEXT[a.place].meaning}</p>${evidenceHTML(aEv)}</div>`:"")+
-          (a?`<div class="resultSection dark"><h4>O que esses dois Lugares mostram juntos</h4><p>${pairText(p,a)}</p></div>`:"")+
-          `<div class="resultSection"><h4>O custo desse movimento</h4><p>${pt.cost}</p><p>O ponto importante é perceber quando esse movimento deixa de ser uma escolha consciente e passa a acontecer quase automaticamente.</p></div>`+
-          (adultEv.length?`<div class="resultSection"><h4>O que teu diagnóstico também encontrou de força em você</h4><p>Você não responde a todas as situações a partir dos Lugares Emocionais. Em diferentes momentos, apareceram recursos de Adulto.</p><div class="adultCard"><strong>${r.adult.count} de 24 situações apresentaram recursos Adultos.</strong></div>${evidenceHTML(adultEv)}</div>`:"")+
-          `<div class="resultSection dark"><h4>Onde está o ponto que precisa ser reorganizado</h4><p>${pt.mechanism}</p><p>${pt.direction}</p></div>`+
-          `<div class="resultSection highlight"><h4>O teu primeiro movimento</h4><p>O objetivo não é deixar de amar, cuidar, sentir ou precisar. É conseguir fazer tudo isso permanecendo no teu Lugar.</p><p><strong>${pt.direction}</strong></p></div>`+
-          `<div class="resultSection"><p class="resultNotice">Este diagnóstico é um instrumento autoral de autorreflexão do Método O Seu Lugar®. Ele descreve movimentos relacionais presentes nas respostas e não substitui avaliação clínica ou psicoterapêutica.</p></div>`;
+          '<div class="resultSection dark"><h4>Não foi possível formar o mapa com três Lugares</h4><p>As respostas não produziram três movimentos emocionais com evidência suficiente. Essa saída existe apenas como proteção técnica do motor.</p></div>';
+        resultCard.classList.add("visible");
+        return;
       }
+
+      const p=PLACE_LIBRARY[r.primary.place],a=PLACE_LIBRARY[r.associated.place],c=PLACE_LIBRARY[r.complementary.place];
+
+      document.getElementById("primaryPlace").textContent=p.name;
+      document.getElementById("secondaryPlace").textContent=a.name;
+      document.getElementById("thirdPlace").textContent=c.name;
+      document.getElementById("secondaryBox").classList.remove("hiddenPlace");
+      document.getElementById("thirdBox").classList.remove("hiddenPlace");
+
+      const pEv=pickEvidence(r.primary,5),aEv=pickEvidence(r.associated,3),cEv=pickEvidence(r.complementary,2);
+
+      document.getElementById("fullResult").innerHTML=`
+        <div class="resultSection dark">
+          <h4>A leitura central do teu diagnóstico</h4>
+          <p>O teu diagnóstico revelou três Lugares Emocionais importantes na forma como você está vivendo o teu relacionamento hoje.</p>
+          <p>O movimento que apareceu com mais força foi <strong>${p.name}</strong>. Junto dele apareceu <strong>${a.name}</strong> e, numa terceira camada, <strong>${c.name}</strong>.</p>
+          <p>Mas o mais importante não é apenas saber os nomes. É entender <strong>como eles aparecem em você e o que revelam quando olhamos para os três juntos.</strong></p>
+        </div>
+
+        <div class="resultSection">
+          <div class="resultEyebrow">Lugar predominante</div>
+          <h4>${p.name}</h4>
+          ${htmlParas(p.primary)}
+          <h4>Como isso apareceu nas tuas respostas</h4>
+          ${evidenceHTML(pEv)}
+          <p>Essas respostas formam uma repetição que ajuda a explicar por que esse Lugar ocupou a primeira posição no teu mapa.</p>
+        </div>
+
+        <div class="resultSection highlight">
+          <div class="resultEyebrow">Movimento associado</div>
+          <h4>${a.name}</h4>
+          ${htmlParas(a.associated)}
+          <h4>Como esse movimento apareceu em você</h4>
+          ${evidenceHTML(aEv)}
+        </div>
+
+        <div class="resultSection">
+          <div class="resultEyebrow">Movimento complementar</div>
+          <h4>${c.name}</h4>
+          ${htmlParas(c.complementary)}
+          <h4>Onde essa terceira camada apareceu</h4>
+          ${evidenceHTML(cEv)}
+        </div>
+
+        <div class="resultSection dark">
+          <h4>O que os teus três Lugares revelam juntos</h4>
+          ${integrationNarrative(r)}
+        </div>
+
+        <div class="resultSection highlight">
+          <h4>O que talvez você ainda não tenha percebido</h4>
+          ${revelationText(r)}
+        </div>
+
+        <div class="resultSection">
+          <h4>O custo emocional e relacional desses movimentos</h4>
+          <p><strong>${p.costTitle}</strong></p>
+          ${costText(r)}
+        </div>
+
+        <div class="resultSection dark">
+          <h4>O ponto central que precisa ser reorganizado</h4>
+          <p><strong>${p.reorganizeTitle}</strong></p>
+          ${reorganizeText(r)}
+          <p><strong>Voltar para O Seu Lugar® não começa tentando mudar o outro. Começa reconhecendo qual espaço você está ocupando diante daquilo que acontece entre vocês.</strong></p>
+        </div>
+
+        <div class="resultSection">
+          <p class="resultNotice">Este diagnóstico é um instrumento autoral de autorreflexão do Método O Seu Lugar®. Ele descreve movimentos relacionais presentes nas respostas e não substitui avaliação clínica ou psicoterapêutica.</p>
+        </div>
+      `;
 
       resultCard.classList.add("visible");
       btnWhats.href="https://wa.me/?text="+encodeURIComponent(buildPlainResult(r));
       localStorage.setItem("oslDiagnostico24",JSON.stringify(getSelections().arr.map(x=>x.code)));
-    }
-
-    function buildPlainResult(r=calculate()){
-      const lines=["DIAGNÓSTICO O SEU LUGAR®","",`Código: ${getResultCode()}`];
-      if(!r.primary){
-        lines.push("Resultado: presença consistente do Lugar Adulto","",`Recursos Adultos: ${r.adult.count} de 24 situações.`);
-      } else {
-        const p=PLACE_TEXT[r.primary.place];
-        lines.push(`Lugar predominante: ${p.name}`);
-        if(r.associated)lines.push(`Movimento associado: ${PLACE_TEXT[r.associated.place].name}`);
-        if(r.complementary)lines.push(`Movimento complementar: ${PLACE_TEXT[r.complementary.place].name}`);
-        lines.push("",p.intro,"",p.meaning,"","Como isso apareceu nas minhas respostas:");
-        pickEvidence(r.primary,5).forEach(e=>lines.push("• "+e.text));
-        if(r.associated){
-          lines.push("","Outro movimento importante:",PLACE_TEXT[r.associated.place].name);
-          pickEvidence(r.associated,2).forEach(e=>lines.push("• "+e.text));
-          lines.push("","Como os dois coexistem:",pairText(r.primary,r.associated));
-        }
-        if(r.adult.count)lines.push("","Recursos Adultos encontrados:",`${r.adult.count} de 24 situações.`);
-        lines.push("","O ponto que precisa ser reorganizado:",p.mechanism,"",p.direction);
-      }
-      return lines.join("\n");
     }
 
     function updateUI(){
