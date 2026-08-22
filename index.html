@@ -333,6 +333,54 @@
     .choiceOption label{position:relative;z-index:2;pointer-events:auto!important;cursor:pointer!important}
     .choiceOption input{pointer-events:none}
 
+  
+    .diagnosisIntro{margin-bottom:18px}
+    .questionIntro{margin-top:18px;margin-bottom:18px}
+    .quizShell{
+      background:#fff;
+      border:1px solid rgba(255,79,184,.20);
+      border-radius:30px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      margin:26px 0 34px;
+    }
+    .progressTop{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:12px
+    }
+    .progressLabel{
+      display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+      font-weight:950;color:var(--pink);margin-bottom:4px
+    }
+    #progressText{font-size:18px}
+    #progressPercent{font-weight:950;color:var(--red)}
+    .progressTrack{height:10px;border-radius:999px;background:#f5edf3;overflow:hidden;margin-bottom:26px}
+    .progressBar{height:100%;width:4.16%;background:linear-gradient(90deg,var(--red),var(--pink));transition:width .25s ease}
+    #quiz .section{display:none;box-shadow:none;border:0;padding:0;margin:0;background:transparent}
+    #quiz .section.activeQuestion{display:block}
+    #quiz .question{border:0;padding:0}
+    #quiz .qtext{font-size:clamp(22px,2.8vw,30px);line-height:1.35;margin-bottom:8px}
+    #quiz .options.choiceGrid{grid-template-columns:1fr;gap:12px}
+    #quiz .choiceOption label{font-size:17px;padding:18px 20px;border-radius:18px}
+    .quizNav{display:flex;justify-content:space-between;gap:14px;margin-top:24px}
+    .quizNav .btn{min-width:150px}
+    .quizNav .btn:disabled{opacity:.42;cursor:not-allowed;box-shadow:none}
+    #finalSection{display:none}
+    #finalSection.visibleFinal{display:block}
+    .mapLead{
+      background:#f8f4f7;border:1px solid rgba(255,79,184,.16);
+      border-radius:18px;padding:15px 16px;margin:12px 0 20px;color:var(--dark)!important
+    }
+    .resultPlaces.three{grid-template-columns:1.25fr 1fr 1fr}
+    .resultPlace.primary{transform:translateY(-2px);box-shadow:0 16px 34px rgba(240,0,60,.18)}
+    .resultPlace span{font-size:11px}
+    .resultPlace strong{font-size:20px}
+    @media(max-width:720px){
+      .quizShell{padding:22px 16px}
+      .quizNav{flex-direction:column-reverse}
+      .quizNav .btn{width:100%}
+      .resultPlaces.three{grid-template-columns:1fr}
+    }
+
   </style>
 </head>
 
@@ -342,44 +390,51 @@
 
   <main class="wrap">
     <section class="hero">
-      <h1>Descubra de onde você está <span>se relacionando</span></h1>
+      <div class="badge">Acesso liberado</div>
+      <h1>Seu Diagnóstico <span>O Seu Lugar®</span></h1>
 
       <p class="subtitle">
-        Quando não ocupamos nosso lugar de adulto na relação, o amor vira peso, cobrança ou carência.
+        Agora você vai responder 24 situações do cotidiano para entender quais são os 3 Lugares Emocionais que mais aparecem na forma como você está vivendo o teu relacionamento hoje.
       </p>
 
       <p class="heroText">
-        Este diagnóstico foi criado para ajudar você a perceber quais lugares emocionais estão influenciando o seu relacionamento hoje.
-        Não é sobre apontar culpados. É sobre trazer consciência aquilo que acontece sem que o casal perceba.
+        No final, você receberá uma devolutiva completa construída a partir das tuas próprias respostas.
+        Não existe resposta certa ou errada. Escolha aquilo que mais se aproxima da tua realidade nos últimos meses.
       </p>
     </section>
 
-    <section class="intro">
-      <h2>Os 7 lugares emocionais do relacionamento</h2>
-      <p>Este diagnóstico observa sete movimentos emocionais diferentes. Você não precisa escolher um deles: as situações abaixo vão mostrar o que aparece com mais força no teu resultado.</p>
+    <section class="intro diagnosisIntro">
+      <h2>Antes de começar</h2>
+      <p>
+        Este diagnóstico analisa 7 movimentos emocionais diferentes. Você não precisa tentar descobrir qual é o seu.
+        Apenas responda às situações com sinceridade. Ao final, o sistema organiza o teu mapa com 3 Lugares e mostra como eles aparecem juntos na tua forma de se relacionar.
+      </p>
+    </section>
 
-      <div class="places">
-        <div class="placeCard"><h3>🤍 Distância silenciosa</h3><p>Quando o casal continua junto, mas deixa de se encontrar emocionalmente.</p></div>
-        <div class="placeCard"><h3>🛡️ Defesa e reatividade</h3><p>Quando a conversa vira proteção, ataque ou justificativa, em vez de conexão.</p></div>
-        <div class="placeCard"><h3>⚖️ Desequilíbrio de troca</h3><p>Quando um sente que dá mais, carrega mais ou sustenta mais a relação.</p></div>
-        <div class="placeCard"><h3>👨‍👩‍👧 Pai ou mãe do parceiro</h3><p>Quando a relação deixa de ser encontro entre adultos e passa a ser cobrança, correção ou controle.</p></div>
-        <div class="placeCard"><h3>🆘 Salvador(a)</h3><p>Quando alguém tenta manter tudo funcionando sozinho e assume a responsabilidade pela relação inteira.</p></div>
-        <div class="placeCard"><h3>🚪 Fuga</h3><p>Quando o silêncio, o afastamento ou a evitação parecem mais seguros do que conversar.</p></div>
-        <div class="placeCard"><h3>👶 Lugar de criança</h3><p>Quando medos antigos, carências emocionais ou dores do passado começam a conduzir o relacionamento.</p></div>
+    <section class="intro questionIntro">
+      <h2>Vamos começar</h2>
+      <p>
+        Leia uma situação por vez e marque a alternativa que mais representa aquilo que normalmente acontece com você.
+      </p>
+    </section>
+
+    <section class="quizShell">
+      <div class="progressTop">
+        <div>
+          <span class="progressLabel">Seu progresso</span>
+          <strong id="progressText">Pergunta 1 de 24</strong>
+        </div>
+        <span id="progressPercent">4%</span>
+      </div>
+      <div class="progressTrack"><div id="progressBar" class="progressBar"></div></div>
+      <form id="quiz"></form>
+      <div class="quizNav">
+        <button type="button" class="btn btn-secondary" id="btnPrev">Voltar</button>
+        <button type="button" class="btn btn-primary" id="btnNext" disabled>Próxima</button>
       </div>
     </section>
 
-    <section class="intro">
-      <h2>Agora responda às perguntas</h2>
-      <p>
-        Respire antes de responder. Esse formulário não mede se o relacionamento está certo ou errado.
-        Ele apenas mostra onde o vínculo está pedindo mais consciência.
-      </p>
-    </section>
-
-    <form id="quiz"></form>
-
-    <section class="final">
+    <section class="final" id="finalSection">
       <h2>Diagnóstico concluído</h2>
       <p>
         Responda todas as perguntas para descobrir qual lugar emocional está conduzindo o seu relacionamento hoje.
@@ -392,13 +447,13 @@
       </div>
 
       <div class="resultCard" id="resultCard" aria-live="polite">
-        <div class="resultEyebrow">O seu resultado</div>
+        <div class="resultEyebrow">Teu Mapa O Seu Lugar®</div>
         <h3>O mapa dos lugares emocionais presentes no seu resultado</h3>
-        <p class="resultLead">O primeiro mostra o movimento que apareceu com mais força. Os demais aparecem somente quando possuem evidência suficiente para acrescentar algo importante à tua leitura.</p>
+        <p class="resultLead">Esta leitura foi construída a partir das 24 situações que você acabou de responder.</p>
         <div class="resultPlaces three">
           <div class="resultPlace primary"><span>Lugar predominante</span><strong id="primaryPlace"></strong></div>
-          <div class="resultPlace" id="secondaryBox"><span>Movimento associado</span><strong id="secondaryPlace"></strong></div>
-          <div class="resultPlace" id="thirdBox"><span>Movimento complementar</span><strong id="thirdPlace"></strong></div>
+          <div class="resultPlace" id="secondaryBox"><span>2º Lugar — aparece junto</span><strong id="secondaryPlace"></strong></div>
+          <div class="resultPlace" id="thirdBox"><span>3º Lugar — completa o mapa</span><strong id="thirdPlace"></strong></div>
         </div>
         <p>Código do resultado: <span class="resultCode" id="resultCode"></span></p>
         <div id="fullResult"></div>
@@ -441,6 +496,13 @@
     const resultCard=document.getElementById("resultCard");
     const btnCopy=document.getElementById("btnCopy");
     const btnPrint=document.getElementById("btnPrint");
+    const btnNext=document.getElementById("btnNext");
+    const btnPrev=document.getElementById("btnPrev");
+    const progressText=document.getElementById("progressText");
+    const progressPercent=document.getElementById("progressPercent");
+    const progressBar=document.getElementById("progressBar");
+    const finalSection=document.getElementById("finalSection");
+    let currentQuestion=1;
     const btnWhats=document.getElementById("btnWhats");
 
     let primeiraRespostaRegistrada=false;
@@ -518,8 +580,9 @@
           weighted:+s.weighted.toFixed(2),max:MAX[p],evidenceCount:s.count,
           strengths:s.strengths,familyCount:fam,confidence:confidence(fam),families:[...s.families],evidence:s.evidence};
       }).sort((a,b)=>(b.eligible-a.eligible)||(b.pct-a.pct)||(b.strengths.MF-a.strengths.MF)||(b.familyCount-a.familyCount)||(b.evidenceCount-a.evidenceCount));
-      const eligible=ranking.filter(x=>x.eligible);
-      const primary=eligible[0]||null,associated=eligible[1]||null,complementary=eligible[2]||null;
+      const primary=ranking[0]||null;
+      const associated=ranking[1]||null;
+      const complementary=ranking[2]||null;
       return {primary,associated,complementary,technicalTie:!!(primary&&associated&&Math.abs(primary.pct-associated.pct)<=5),
         adult:{count:adult.length,pct:+(adult.length/24*100).toFixed(1),evidence:adult},ranking};
     }
@@ -887,18 +950,97 @@ Existe diferença entre escolher não conversar agora e sentir que é melhor nun
 
     function costText(r){
       const p=PLACE_LIBRARY[r.primary.place];
-      const pa=PAIR_LIBRARY[pairKey(r.primary.place,r.associated.place)];
-      const pc=PAIR_LIBRARY[pairKey(r.primary.place,r.complementary.place)];
-      return htmlParas(p.costBase)+(pa?`<p>${pa[1]}</p>`:"")+(pc?`<p>${pc[1]}</p>`:"");
+      return htmlParas(p.costBase);
     }
 
     function reorganizeText(r){
       const p=PLACE_LIBRARY[r.primary.place];
-      const pa=PAIR_LIBRARY[pairKey(r.primary.place,r.associated.place)];
-      const pc=PAIR_LIBRARY[pairKey(r.primary.place,r.complementary.place)];
-      return htmlParas(p.reorganize)+(pa?`<p>${pa[1]}</p>`:"")+(pc?`<p>${pc[1]}</p>`:"");
+      return htmlParas(p.reorganize);
     }
 
+
+
+    function evidenceHas(group, terms){
+      const text=(group?.evidence||[]).map(e=>String(e.text||"").toLowerCase()).join(" ");
+      return terms.some(t=>text.includes(t));
+    }
+
+    function personalizedReveal(r){
+      const p=r.primary;
+      const place=p.place;
+
+      if(place==="distancia"){
+        if(evidenceHas(p,["frustra","deixando de esperar","menos vontade de me aproximar"])){
+          return "Existe uma diferença importante entre deixar de querer alguma coisa e deixar de esperar por ela. As tuas respostas mostram que, em alguns pontos, a redução da expectativa veio depois de frustrações repetidas. Isso indica que parte da distância pode estar funcionando como adaptação emocional, e não simplesmente como falta de importância.";
+        }
+        if(evidenceHas(p,["nem penso mais em contar","quase não compartilhamos","vivendo as coisas sozinha"])){
+          return "As tuas respostas mostram que a distância não aparece apenas na falta de carinho ou conversa. Ela também aparece quando partes importantes da tua vida deixam de passar pelo relacionamento. Você pode ter aprendido a viver algumas experiências sozinha antes mesmo de perceber o quanto deixou de compartilhá-las com ele.";
+        }
+        return "Nem tudo aquilo que ficou mais distante deixou necessariamente de importar. O teu resultado mostra que a conexão foi ocupando menos espaço, e isso merece ser diferenciado daquilo que você realmente escolheu deixar para trás.";
+      }
+
+      if(place==="defesa"){
+        if(evidenceHas(p,["imagem errada","entender que eu não fiz","explicar novamente","minha intenção"])){
+          return "No teu resultado, a Defesa aparece principalmente quando você sente que foi interpretada de uma forma que não corresponde à tua intenção. Nesses momentos, explicar não é só comunicação: também vira uma tentativa de proteger a imagem que o outro está formando sobre você.";
+        }
+        return "Talvez o ponto mais importante não seja aquilo que você diz quando se defende, mas aquilo que sente que precisa proteger antes de começar a se defender.";
+      }
+
+      if(place==="crianca"){
+        if(evidenceHas(p,["está tudo bem","continuo sendo","importante","ainda está","me querer"])){
+          return "As tuas respostas mostram que alguns comportamentos dele acabam funcionando como sinais sobre a segurança do vínculo. Às vezes você não está esperando apenas uma atitude: está esperando que aquela atitude responda se vocês continuam bem e qual é o teu lugar dentro da relação.";
+        }
+        return "O que aconteceu entre vocês e aquilo que você concluiu sobre o vínculo podem ser duas coisas diferentes. O teu resultado mostra que alguns sinais do outro ganham peso emocional importante.";
+      }
+
+      if(place==="desequilibrio"){
+        if(evidenceHas(p,["se eu não fizer","se eu também parar","sem o meu esforço","sempre quem começa","depende de mim"])){
+          return "Talvez o teu cansaço não venha apenas da quantidade de coisas que você faz. As tuas respostas mostram também a sensação de que, se você reduzir o movimento, algo importante pode deixar de acontecer. Enquanto você ocupa automaticamente esse espaço, fica difícil enxergar quanto movimento realmente viria do outro lado.";
+        }
+        return "Existe diferença entre contribuir porque você escolhe e compensar porque sente que alguma coisa precisa continuar acontecendo.";
+      }
+
+      if(place==="pai_mae"){
+        if(evidenceHas(p,["lembr","corrig","acompan","orient","jeito diferente","forma seria melhor"])){
+          return "As tuas respostas mostram que o peso não está apenas em fazer. Em algumas situações você também sente necessidade de acompanhar, orientar ou garantir como aquilo será feito. É aí que ajudar começa a se aproximar de conduzir.";
+        }
+        return "Ajudar e conduzir parecem movimentos parecidos por fora, mas colocam você em lugares completamente diferentes dentro da relação.";
+      }
+
+      if(place==="salvador"){
+        if(evidenceHas(p,["consequ","resolver","ajudar","sofrer","problema"])){
+          return "O teu resultado mostra que, diante da dificuldade dele, a tua preocupação tende rapidamente a virar movimento. O ponto não está no cuidado, mas em perceber quando estar ao lado começa a exigir de você entrar também na solução.";
+        }
+        return "Estar ao lado não exige necessariamente entrar no lugar do outro.";
+      }
+
+      if(place==="fuga"){
+        if(evidenceHas(p,["não vale a pena","deixar para lá","prefiro não","evitar","me fecho","não tocar"])){
+          return "As tuas respostas mostram que o silêncio nem sempre aparece porque o assunto foi resolvido. Em alguns momentos, falar passou a parecer emocionalmente mais caro do que guardar. Isso reduz o desconforto imediato, mas também deixa partes importantes de você fora da conversa.";
+        }
+        return "Nem tudo aquilo sobre o que você parou de falar deixou de existir dentro de você.";
+      }
+
+      return "";
+    }
+
+    function primaryPair(r){
+      return PAIR_LIBRARY[pairKey(r.primary.place,r.associated.place)];
+    }
+
+    function integrationNarrativeSmart(r){
+      const main=primaryPair(r);
+      const second=PAIR_LIBRARY[pairKey(r.primary.place,r.complementary.place)];
+      const third=PAIR_LIBRARY[pairKey(r.associated.place,r.complementary.place)];
+
+      let parts=[];
+      if(main) parts.push(`<p>${main[1]}</p>`);
+      if(second && second[1]!==main?.[1]) parts.push(`<p>${second[1]}</p>`);
+      if(third && third[1]!==main?.[1] && third[1]!==second?.[1]) parts.push(`<p>${third[1]}</p>`);
+
+      if(main) parts.push(`<div class="evidenceAnswer"><strong>A tensão central do teu mapa aparece aqui:</strong><br>${main[0]}</div>`);
+      return parts.join("");
+    }
     function buildPlainResult(r=calculate()){
       const lines=["DIAGNÓSTICO O SEU LUGAR®","",`Código: ${getResultCode()}`];
       if(!r.primary || !r.associated || !r.complementary){
@@ -1002,12 +1144,12 @@ Existe diferença entre escolher não conversar agora e sentir que é melhor nun
 
         <div class="resultSection dark">
           <h4>O que os teus três Lugares revelam juntos</h4>
-          ${integrationNarrative(r)}
+          ${integrationNarrativeSmart(r)}
         </div>
 
         <div class="resultSection highlight">
           <h4>O que talvez você ainda não tenha percebido</h4>
-          ${revelationText(r)}
+          <p>${personalizedReveal(r)}</p>
         </div>
 
         <div class="resultSection">
@@ -1033,6 +1175,49 @@ Existe diferença entre escolher não conversar agora e sentir que é melhor nun
 
     }
 
+
+    function showQuestion(n){
+      currentQuestion=Math.max(1,Math.min(24,n));
+      [...form.querySelectorAll(".section")].forEach((sec,i)=>{
+        sec.classList.toggle("activeQuestion",i===currentQuestion-1);
+      });
+
+      const pct=Math.round((currentQuestion/24)*100);
+      progressText.textContent=`Pergunta ${currentQuestion} de 24`;
+      progressPercent.textContent=`${pct}%`;
+      progressBar.style.width=`${pct}%`;
+      btnPrev.style.visibility=currentQuestion===1?"hidden":"visible";
+
+      const selected=form.querySelector(`input[name="q${currentQuestion}"]:checked`);
+      btnNext.disabled=!selected;
+      btnNext.textContent=currentQuestion===24?"Ver meu resultado":"Próxima";
+
+      const shell=document.querySelector(".quizShell");
+      if(shell && currentQuestion>1) shell.scrollIntoView({behavior:"smooth",block:"start"});
+    }
+
+    function allAnswered(){
+      return getSelections().miss===0;
+    }
+
+    btnPrev.addEventListener("click",()=>showQuestion(currentQuestion-1));
+
+    btnNext.addEventListener("click",()=>{
+      const selected=form.querySelector(`input[name="q${currentQuestion}"]:checked`);
+      if(!selected) return;
+
+      if(currentQuestion<24){
+        showQuestion(currentQuestion+1);
+      } else if(allAnswered()){
+        renderResult();
+        document.querySelector(".quizShell").style.display="none";
+        document.querySelector(".questionIntro").style.display="none";
+        finalSection.classList.add("visibleFinal");
+        statusText.textContent="Seu resultado foi liberado abaixo.";
+        finalSection.scrollIntoView({behavior:"smooth",block:"start"});
+      }
+    });
+
     function updateUI(){
       const {miss}=getSelections();
       if(miss===0){
@@ -1052,6 +1237,7 @@ Existe diferença entre escolher não conversar agora e sentir que é melhor nun
     // Cada acesso começa como um diagnóstico novo.
     localStorage.removeItem("oslDiagnostico24");
     renderQuestions();
+    showQuestion(1);
     resultCard.classList.remove("visible");
     statusText.textContent="Para liberar o resultado, responda todas as 24 perguntas.";
 
@@ -1060,7 +1246,8 @@ Existe diferença entre escolher não conversar agora e sentir que é melhor nun
         primeiraRespostaRegistrada=true;
         if(typeof trackEvent==="function")trackEvent("primeira_resposta_diagnostico",{perguntas:24});
       }
-      updateUI();
+      const selected=form.querySelector(`input[name="q${currentQuestion}"]:checked`);
+      btnNext.disabled=!selected;
     });
 
     btnPrint.addEventListener("click",()=>window.print());
